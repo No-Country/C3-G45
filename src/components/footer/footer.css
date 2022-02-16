@@ -1,21 +1,27 @@
-.footer p, i{
+.footer {
+    background-color: #04020F;
+}
+
+.footer p,
+i {
     color: white;
 }
 
-.footer p{
+.footer p {
     margin-top: 1rem;
 }
 
-.footer a:hover, i:hover{
-    color: #ccc;
+.footer a:hover,
+i:hover {
+    color     : #ccc;
     transition: 300ms all;
 }
 
-.fab{
+.fab {
     font-size: 1.2rem;
 }
 
-.fab:hover{
-    transform: scale(1.2);
+.fab:hover {
+    transform : scale(1.2);
     transition: 300ms all;
 }

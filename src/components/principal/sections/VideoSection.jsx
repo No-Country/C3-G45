@@ -15,7 +15,7 @@ const VideoSection = () => {
                 <div className="col-md-6 mt-5 mb-4">
                     <div className="video-bg">
                         <button className="btn-video">
-                            <i class="fas fa-play"></i>
+                            <i className="fas fa-play"></i>
                         </button>
                     </div>
                 </div>

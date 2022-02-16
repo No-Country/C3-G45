@@ -18,8 +18,8 @@ const MerchandisingSection = () => {
             <div className='row'>
                 <div className='col'>
                     <div className="btn-toolbar justify-content-between" role="group" aria-label="Events">
-                        <button type="button" className="btn btn-lg">Last Events!</button>
-                        <button type="button" className="btn btn-lg">New Events!</button>
+                        <button type="button" className="btn-merch btn btn-lg">Last Events!</button>
+                        <button type="button" className="btn-merch btn btn-lg">New Events!</button>
                     </div>
                 </div>
             </div>

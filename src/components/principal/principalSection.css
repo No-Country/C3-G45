@@ -1,3 +1,47 @@
-.card-img-top{
+/*header*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.btn-primary {
+    background-color: #E922FF;
+    border-color    : #E922FF;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #7622F0;
+    border-color    : #7622F0;
+    box-shadow      : none;
+}
+
+.title-header {
+    color      : #E922FF;
+    font-weight: 600;
+    font-size  : 90px;
+    text-shadow: 0 0 0.1em #A737FA, 0 0 0.1em #A737FA,
+        0 0 0.1em #A737FA;
+    font-family: 'Bebas Neue', cursive;
+    margin     : 0;
+    padding    : 0;
+}
+
+.text-header {
+    max-width  : 300px;
+    font-size  : medium;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/*merchandising section*/
+
+.btn-merch {
+    color: #7622F0;
+}
+
+.card {
+    color: #04020F;
+}
+
+.card-img-top {
     max-width: 90px;
 }

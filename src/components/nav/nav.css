@@ -3,3 +3,7 @@
     border-bottom: 2px solid black;
     transition: 100ms all;
 }
+.nav-logo{
+    width: 85px;
+    height: 35px;
+}

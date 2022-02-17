@@ -1,47 +1,58 @@
 /*header*/
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
 .btn-primary {
-    background-color: #E922FF;
-    border-color    : #E922FF;
+  background-color: #e922ff;
+  border-color: #e922ff;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
-    background-color: #7622F0;
-    border-color    : #7622F0;
-    box-shadow      : none;
+  background-color: #7622f0;
+  border-color: #7622f0;
+  box-shadow: none;
 }
 
 .title-header {
-    color      : #E922FF;
-    font-weight: 600;
-    font-size  : 90px;
-    text-shadow: 0 0 0.1em #A737FA, 0 0 0.1em #A737FA,
-        0 0 0.1em #A737FA;
-    font-family: 'Bebas Neue', cursive;
-    margin     : 0;
-    padding    : 0;
+  color: #e922ff;
+  font-weight: 600;
+  font-size: 90px;
+  text-shadow: 0 0 0.1em #a737fa, 0 0 0.1em #a737fa, 0 0 0.1em #a737fa;
+  font-family: "Bebas Neue", cursive;
+  margin: 0;
+  padding: 0;
 }
 
 .text-header {
-    max-width  : 300px;
-    font-size  : medium;
-    font-family: 'Josefin Sans', sans-serif;
+  max-width: 300px;
+  font-size: medium;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 /*merchandising section*/
 
 .btn-merch {
-    color: #7622F0;
+  color: #7622f0;
 }
 
 .card {
-    color: #04020F;
+  color: #04020f;
 }
 
-.card-img-top {
-    max-width: 90px;
+.card-body {
+  display: inline-block;
+  position: absolute;
+}
+.container-tickets {
+  max-width: 960px;
+}
+
+@media (max-width: 576px) {
+  .body-ticket {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
 }

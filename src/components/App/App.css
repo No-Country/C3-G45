@@ -2,30 +2,53 @@
 
 /* ESTILOS DE GENERALES*/
 .App {
-  color     : #fff;
-  text-align: center;
-  background: -moz-linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
-  filter    : progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a024f", endColorstr="#000000", GradientType=1);
+  color: #fff;
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(42, 2, 79, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(42, 2, 79, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(42, 2, 79, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a024f", endColorstr="#000000", GradientType=1);
 }
 
 /*ESTILOS PARA EL BACKGROUND*/
 .App-main {
-  height    : 48.5rem;
-  background: -moz-linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
-  filter    : progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a024f", endColorstr="#000000", GradientType=1);
-  color     : white;
+  height: 48.5rem;
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(42, 2, 79, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(42, 2, 79, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(42, 2, 79, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a024f", endColorstr="#000000", GradientType=1);
+  color: white;
   text-align: start;
 }
 
 .App-background {
-  height             : 48.5rem;
-  background-image   : url(../../assets/img/backg.png);
+  height: 48.5rem;
+  background-image: url(../../assets/img/backg.png);
   background-position: center;
-  background-size    : cover;
+  background-size: cover;
 }
 
 .App-main span {
@@ -34,41 +57,41 @@
 
 /*ESTILOS PARA LAS SECCIONES DE ÚLTIMO VIDEO*/
 .video-section-text {
-  display        : flex;
-  flex-direction : column;
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  align-items    : flex-start;
+  align-items: flex-start;
 }
 
 .video-section-text h2 {
-  font-size : 5rem;
-  color     : #46afcc;
+  font-size: 5rem;
+  color: #46afcc;
   text-align: start;
 }
 
 .video-bg {
   background-image: url(../../assets/img/dua-lipa.jpg);
-  background-size : cover;
-  border-radius   : 2rem;
-  height          : 37.5rem;
-  display         : flex;
-  justify-content : center;
-  align-items     : center;
+  background-size: cover;
+  border-radius: 2rem;
+  height: 37.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-video {
-  display         : flex;
-  justify-content : center;
-  align-items     : center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(118, 34, 240, 0.8);
-  border          : none;
-  border-radius   : 5rem;
-  height          : 8rem;
-  width           : 8rem;
+  border: none;
+  border-radius: 5rem;
+  height: 8rem;
+  width: 8rem;
 }
 
 .btn-video:hover {
-  transform : scale(1.5);
+  transform: scale(1.5);
   transition: 300ms all;
 }
 
@@ -81,17 +104,17 @@
 }
 
 .fa-angle-down {
-  color: #7622F0;
+  color: #7622f0;
 }
 
 .fa-angle-down {
-  color: #7622F0;
+  color: #7622f0;
 
   font-size: 5rem;
 }
 
 .fa-angle-down:hover {
-  color: #7622F0;
+  color: #7622f0;
 }
 
 /*MEDIAS QUERY*/

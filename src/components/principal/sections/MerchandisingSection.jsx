@@ -23,52 +23,74 @@ const MerchandisingSection = () => {
                     </div>
                 </div>
             </div>
-            <div className='row'>
+            <div className="container container-tickets">
+                <div className='row'>
                 <div className='col'>
                     <div className="row row-cols-1 ">
-                        <div className="card mb-5">
-                            <img src={miniature} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        <div className="container card mb-5 p-0">
+                            <div className="row g-0">
+                                <div className='col-xs-12 col-sm-4 p-2 d-flex alig-items-center justify-content-center body-ticket'>
+                                     <img src={miniature} alt="..." />
+                                </div>
+                            
+                            <div className="col-xs-12 col-sm-4 p-2 body-ticket">
+                                <h3>12/06/2022</h3>
+                                <p>Buenos Aires</p>
+                                <p>Estadio River Plate</p>
+                                <p className='text-muted'>20:00</p>
                             </div>
-                        </div>
-                        <div className="card mb-5">
-                            <img src={miniature} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                            <div className='col-xs-12 col-sm-4 p-2 d-flex justify-content-center align-items-end'>
+                                <button className='btn btn-primary'>Buy ticket</button>
                             </div>
-                        </div>
-                        <div className="card mb-5">
-                            <img src={miniature} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                             </div>
+                            
+                            
                         </div>
-                        <div className="card mb-5">
-                            <img src={miniature} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        <div className="container card mb-5 p-0">
+                            <div className="row g-0">
+                                <div className='col-xs-12 col-sm-4 p-2 d-flex alig-items-center justify-content-center body-ticket'>
+                                     <img src={miniature} alt="..." />
+                                </div>
+                            
+                            <div className="col-xs-12 col-sm-4 p-2 body-ticket">
+                                <h3>12/06/2022</h3>
+                                <p>Buenos Aires</p>
+                                <p>Estadio River Plate</p>
+                                <p className='text-muted'>20:00</p>
                             </div>
-                        </div>
-                        <div className="card mb-5">
-                            <img src={miniature} className="card-img-top" alt="..." />
-                            <div className="card-body">
-                                <h5 className="card-title">Card title</h5>
-                                <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                            <div className='col-xs-12 col-sm-4 p-2 d-flex justify-content-center align-items-end'>
+                                <button className='btn btn-primary'>Buy ticket</button>
                             </div>
+                            </div>
+                            
+                            
                         </div>
+                        <div className="container card mb-5 p-0">
+                            <div className="row g-0">
+                                <div className='col-xs-12 col-sm-4 p-2 d-flex alig-items-center justify-content-center body-ticket'>
+                                     <img src={miniature} alt="..." />
+                                </div>
+                            
+                            <div className="col-xs-12 col-sm-4 p-2 body-ticket">
+                                <h3>12/06/2022</h3>
+                                <p>Buenos Aires</p>
+                                <p>Estadio River Plate</p>
+                                <p className='text-muted'>20:00</p>
+                            </div>
+                            <div className='col-xs-12 col-sm-4 p-2 d-flex justify-content-center align-items-end'>
+                                <button className='btn btn-primary'>Buy ticket</button>
+                            </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>
+            </div>
+            
         </div>
     )
 }

@@ -56,3 +56,9 @@
     align-items: center;
   }
 }
+
+@media (max-width: 768px){
+  .video-bg{
+    height: 27.5rem !important;
+  }
+}

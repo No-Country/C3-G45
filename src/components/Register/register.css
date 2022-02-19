@@ -1,0 +1,24 @@
+.row-form{
+    min-height: 48.5rem;
+}
+
+.form-style{
+    background-color: #A737FA;
+    border-top-left-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    padding: 5rem;
+    margin: 5rem;
+}
+
+.video-link{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

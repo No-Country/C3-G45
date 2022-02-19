@@ -3,7 +3,7 @@ import miniature from '../../../assets/img/dua-lipa-miniature.jpg';
 
 const MerchandisingSection = () => {
     return (
-        <div className="container">
+        <div className="container mt-5 mb-5">
             <div className='row mt-5'>
                 <h1>AVAILABLE EVENTS AND MERCHANDISING</h1>
                 <div className='col'>

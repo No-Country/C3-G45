@@ -1,8 +1,13 @@
 import React from 'react';
 
 const VideoSection = () => {
+
+    const videoLink = () => {
+        window.location.href = "https://www.youtube.com/";
+    }
+
     return (
-        <div className="container">
+        <div className="container mt-5 mb-5">
             <div className="row">
                 <div className="col-md-6 mt-5 video-section-text">
                     <i className="fas fa-angle-down"></i>
@@ -14,7 +19,7 @@ const VideoSection = () => {
                 </div>
                 <div className="col-md-6 mt-5 mb-4">
                     <div className="video-bg">
-                        <button className="btn-video">
+                        <button onClick={ videoLink } className="btn-video">
                             <i className="fas fa-play"></i>
                         </button>
                     </div>

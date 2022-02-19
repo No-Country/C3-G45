@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className="footer container-fluid">
-            <div className="row align-items-center justify-content-center">
+            <div className="row align-items-center ">
                 <div className="col-md-6 ">
                     <p> &copy; 2022 Todos los derechos reservados </p>
                     <p>Política de Garantías | Libro de reclamos</p>

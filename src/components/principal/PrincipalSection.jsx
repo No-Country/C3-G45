@@ -11,7 +11,6 @@ const PrincipalSection = () => {
         <>
             <Header />
             <VideoSection />
-            <hr />
             <MerchandisingSection />
         </>
     )

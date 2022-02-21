@@ -1,0 +1,13 @@
+.modal-content{
+    background-color: #686AF1;
+    border: 1px solid #7622F0;
+    box-shadow: 5px 5px 6px 3px rgba(118, 34, 240, 0.5);
+}
+
+.modal-footer{
+    border-top: 1px solid #7622F0;
+}
+
+.modal-header{
+    border-bottom: 1px solid #7622F0;
+} 

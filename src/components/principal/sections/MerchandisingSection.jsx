@@ -1,5 +1,5 @@
 import React from "react";
-import miniature from "../../../assets/img/dua-lipa-miniature.jpg";
+import TicketsCards from "../../TicketsCards/TicketsCards";
 
 const MerchandisingSection = () => {
   return (
@@ -31,10 +31,10 @@ const MerchandisingSection = () => {
       <div className="row">
         <div className="col">
           <div className="btn-toolbar mt-4" role="group" aria-label="Events">
-            <button type="button" className="btn-merch btn btn-primary btn-lg">
+            <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#lastEvents">
               Last Events!
             </button>
-            <button type="button" className="btn-merch btn btn-primary btn-lg">
+            <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#newEvents">
               New Events!
             </button>
           </div>
@@ -44,54 +44,7 @@ const MerchandisingSection = () => {
         <div className="row">
           <div className="col">
             <div className="row row-cols-1 ">
-              <div className="container card mb-5 p-0">
-                <div className="row g-0">
-                  <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
-                    <img src={miniature} alt="..." />
-                  </div>
-                  <div className="col-8">
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-xs-12 col-md-6 p-2 body-ticket">
-                          <h3>12/06/2022</h3>
-                          <p>Buenos Aires</p>
-                          <p>Estadio River Plate</p>
-                          <p className="text-muted">20:00</p>
-                        </div>
-                        <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-end">
-                          <button className="btn btn-primary">
-                            Buy ticket
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="container card mb-5 p-0">
-                <div className="row g-0">
-                  <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
-                    <img src={miniature} alt="..." />
-                  </div>
-                  <div className="col-8">
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-xs-12 col-md-6 p-2 body-ticket">
-                          <h3>12/06/2022</h3>
-                          <p>Buenos Aires</p>
-                          <p>Estadio River Plate</p>
-                          <p className="text-muted">20:00</p>
-                        </div>
-                        <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-end">
-                          <button className="btn btn-primary">
-                            Buy ticket
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <TicketsCards />
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="footer container-fluid">
             <div className="row align-items-center ">
                 
-                <div className="col-md-12 ">
+                <div className="col-md-12 mt-3">
                     <a href="https://www.instagram.com">
                         <i className="fab fa-instagram me-3 ms-3"></i>
                     </a>

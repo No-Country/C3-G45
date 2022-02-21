@@ -1,27 +1,28 @@
 .footer {
-    background-color: #04020F;
+  background-color: #04020f;
+  text-align: center;
 }
 
 .footer p,
 i {
-    color: white;
+  color: white;
 }
 
 .footer p {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .footer a:hover,
 i:hover {
-    color     : #ccc;
-    transition: 300ms all;
+  color: #ccc;
+  transition: 300ms all;
 }
 
 .fab {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .fab:hover {
-    transform : scale(1.2);
-    transition: 300ms all;
+  transform: scale(1.2);
+  transition: 300ms all;
 }

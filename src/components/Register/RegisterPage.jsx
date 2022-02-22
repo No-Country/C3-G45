@@ -15,7 +15,7 @@ const RegisterPage = () => {
                     <p>If you have an account, just login!!</p>
                     <Link className="btn btn-primary" to="/login" >Login</Link>
                 </div>
-                <div className="col col-lg-8">
+                <div className="col col-lg-8 mt-5 mb-5">
                     <form className="form-style" >
                         <div className="mb-4">
                             <h2>Register your account</h2>

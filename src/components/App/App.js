@@ -1,22 +1,29 @@
 import { BrowserRouter } from 'react-router-dom';
-import AppRouter from '../Router/AppRouter';
+import { Provider } from 'react-redux';
+
+import { store } from '../../store/store';
 import Footer from '../footer/Footer';
 import Navbar from '../nav/Navbar';
 import LastEventsModal from '../modals/LastEventsModal';
-import './App.css';
 import NewEvents from '../modals/NewEvents';
+import AppRouter from '../../Router/AppRouter';
+
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <AppRouter />
-        <LastEventsModal />
-        <NewEvents />
-        <Footer />
-      </div>
-    </BrowserRouter>
+
+    <Provider store={ store }>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <AppRouter />
+          <LastEventsModal />
+          <NewEvents />
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

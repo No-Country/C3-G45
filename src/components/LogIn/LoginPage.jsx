@@ -4,7 +4,7 @@ import '../Register/register.css';
 import '../../assets/scss/google-btn.css';
 import { useDispatch } from 'react-redux';
 import { useForm } from '../../hooks/useForm';
-import { login } from '../../actions/auth';
+import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
 
 const LoginPage = () => {
     
@@ -15,11 +15,15 @@ const LoginPage = () => {
         password: "1234567"
     });
 
-    //const { email, password } = formValues;
+    const { email, password } = formValues;
+
+    const handleGoogleLogin = () => {
+        dispatch( startGoogleLogin() );
+    }
 
     const handleLogin = ( e ) => {
         e.preventDefault();
-        dispatch( login(123415, "LucaRM") );
+        dispatch( startLoginEmailPass( email, password ) );
     }
     return (
         <div className="container-fluid container-form">
@@ -48,6 +52,7 @@ const LoginPage = () => {
 
                             <div
                                 className="google-btn"
+                                onClick={ handleGoogleLogin }
                             >
                                 <div className="google-icon-wrapper">
                                     <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />

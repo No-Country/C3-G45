@@ -2,8 +2,14 @@ import logo from '../../assets/img/logo.svg';
 import './nav.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserNav from './UserNav';
+import LoginNav from './LoginNav';
+import { connect } from 'react-redux';
 
 const Navbar = () => {
+
+  const login = false;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
@@ -14,14 +20,9 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" id='ingresar' to="/login">Sign in</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" id='registrar' to="/register">Register</Link>
-            </li>
-          </ul>
+          {
+            login ?<LoginNav /> :<UserNav />
+          }
         </div>
       </div>
     </nav>

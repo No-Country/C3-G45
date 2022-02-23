@@ -15,13 +15,12 @@ const LoginPage = () => {
         password: "1234567"
     });
 
-    const { email, password } = formValues;
+    //const { email, password } = formValues;
 
     const handleLogin = ( e ) => {
         e.preventDefault();
         dispatch( login(123415, "LucaRM") );
     }
-
     return (
         <div className="container-fluid container-form">
             <div className="row row-form justify-content-center">

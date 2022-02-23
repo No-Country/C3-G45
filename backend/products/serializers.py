@@ -51,7 +51,7 @@ class EventSerializer(serializers.ModelSerializer):
             "products",
             "tickets",
         )
-
+""" 
 class Product_OrderSerializer(serializers.ModelSerializer):
     products= ProductSerializer()
 
@@ -61,21 +61,23 @@ class Product_OrderSerializer(serializers.ModelSerializer):
             "id",
             "products",
         )
-
+ """
 
 
 class OrderSerializer(serializers.ModelSerializer):
-  
+    product_order= serializers.CharField()
+    event_order=serializers.CharField()
+    quantity_product=serializers.IntegerField()
+    quantity_event=serializers.IntegerField()
+    order_status=serializers.HiddenField(default="PENDING")
+    
     class Meta:
         model=Order 
         fields=(
-            'id',
-            'id_user',
             'product_order',
             'event_order',
             'quantity_product', 
-            'date_added', 
-            'updated_at',
+            'quantity_event',
             'order_status',
         )
 

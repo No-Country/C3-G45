@@ -15,7 +15,7 @@ urlpatterns = [
     #path('tickets/<slug:event_slug>/<slug:ticket_slug>/', views.TicketDetail.as_view()),
 
     #order paths
-    path('order-list/', views.OrdersList.as_view()),
+    path('order-list/', views.OrderCreateListView.as_view(), name='order'),
 
     #path('products/<slug:event_slug>/', views.TourDetail.as_view()),
     #admin authntication

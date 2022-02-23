@@ -1,7 +1,9 @@
 from django.http import Http404
 
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.generics import GenericAPIView
 
 from .models import Product, Event, Tour, Ticket, Order
 from .serializers import ProductSerializer, EventSerializer, TicketSerializer, OrderSerializer
@@ -25,8 +27,26 @@ class TicketsList(APIView):
         serializer = TicketSerializer(tickets, many=True)
         return Response(serializer.data)
 
-class OrdersList(APIView):
-    def get(self, request, format=None):
-        orders = Order.objects.all()[0:4]
-        serializer = OrderSerializer(orders, many=True)
-        return Response(serializer.data)
+class OrderCreateListView(GenericAPIView):
+    serializer_class= OrderSerializer
+    queryset= Order.objects.all()
+
+    def get(self, request):
+        orders= Order.objects.all()
+        serializer=self.serializer_class(instance=orders, many=True)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        pass
+
+class OrderDetailView(GenericAPIView):
+
+    def get(self, request, order_id):
+        pass
+
+    def put (self, request, order_id):
+        pass
+
+    def delete (self, request, order_id):
+        pass

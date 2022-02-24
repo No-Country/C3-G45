@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Register/register.css';
 import '../../assets/scss/google-btn.css';
 import { useDispatch } from 'react-redux';
@@ -9,6 +9,7 @@ import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
 const LoginPage = () => {
     
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [ formValues, handleInputChange ] = useForm({
         email: "lucasrojas95@gmail.com",
@@ -19,11 +20,14 @@ const LoginPage = () => {
 
     const handleGoogleLogin = () => {
         dispatch( startGoogleLogin() );
+        navigate('/home');
     }
 
     const handleLogin = ( e ) => {
         e.preventDefault();
         dispatch( startLoginEmailPass( email, password ) );
+
+        navigate('/home');
     }
     return (
         <div className="container-fluid container-form">

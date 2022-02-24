@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom';
 import UserNav from './UserNav';
 import LoginNav from './LoginNav';
 import { store } from '../../store/store';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+  const state = useSelector( state => state);
+
+  console.log(state.auth.session);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,7 +24,7 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           {
-            store.getState().session ?<LoginNav /> :<UserNav />
+            state.auth.session ?<LoginNav /> :<UserNav />
           }
         </div>
       </div>

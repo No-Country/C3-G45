@@ -1,23 +1,56 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import validator from 'validator';
+import { removeError, setError } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
 import './register.css';
 
 const RegisterPage = () => {
 
+    const dispatch = useDispatch();
+
     const [ formValues, handleInputChange ] = useForm({
-        name: "Luca",
+        firstName: "Luca",
         lastName: "Rojas Massey",
         userName: "LucaRM95",
         email: "lucasrojas95@gmail.com",
         password: "1234567"
     });
 
-    const { name, lastName, userName, email, password } = formValues;
+    const { firstName, lastName, userName, email, password } = formValues;
 
     const handleRegister = (e) => {
         e.preventDefault();
-        console.log( name, lastName, userName, email, password );
+
+        if ( isFormValid() ){
+            console.log("Formulario correcto!");
+            console.log( firstName, lastName, userName, email, password );
+        }
+    }
+
+    const isFormValid = () => {
+        
+        if ( firstName.trim().length <= 1 ) {
+            dispatch( setError("First name is required and should be at least 2 characters") )
+            return false;
+        } else if ( lastName.trim().length <= 1 ) {
+            dispatch( setError("Last name is required and should be at least 2 characters") )
+            return false;
+        } else if ( !validator.isEmail( email ) ) {
+            dispatch( setError("Email is not valid") )
+            return false;
+        } else if ( userName.trim().length <= 3 ) {
+            dispatch( setError("User name is required and should be at least 3 characters") )
+            return false;
+        } else if ( password.length < 5 ) {
+            dispatch( setError("Password should be at least 6 characters") )
+            return false
+        }
+        
+        dispatch( removeError() );
+       return true;
     }
 
     return (
@@ -39,7 +72,7 @@ const RegisterPage = () => {
                         </div>
                         <div className="mb-4">
                             <p>hola</p>
-                            <input type="text" className="form-control" name="firstName" placeholder="First Name" onChange={ handleInputChange } value={ name }/>
+                            <input type="text" className="form-control" name="firstName" placeholder="First Name" onChange={ handleInputChange } value={ firstName }/>
                         </div>
                         <div className="mb-4">
                             <input type="text" className="form-control" name="lastName" placeholder="Last Name" onChange={ handleInputChange } value={ lastName }/>

@@ -28,3 +28,14 @@ export const login = ( uid, displayName ) => ({
         displayName
     }
 });
+
+export const startLogout = () => {
+    return (dispatch) => {
+        dispatch( logout() )
+    }
+}
+
+export const logout = () => ({
+    type: types.logout,
+    payload: {  }
+})

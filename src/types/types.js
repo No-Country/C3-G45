@@ -4,8 +4,12 @@ export const types = {
     /* Auth types */
     login: "[Auth] Login",
     logout: "[Auth] Logout",
+    
+    /* Register type*/
+    register: "[REG] Register",
 
     /* Error types */
     uiSetError: "[UI] Set Error",
-    uiRemoveError: "[UI] Remove Error"
+    uiRemoveError: "[UI] Remove Error",
+
 }

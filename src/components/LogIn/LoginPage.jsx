@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../Register/register.css';
-import '../../assets/scss/google-btn.css';
 import { useDispatch } from 'react-redux';
+
+import { v4 as uuidv4 } from 'uuid';
 import { useForm } from '../../hooks/useForm';
 import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
+
+import '../Register/register.css';
+import '../../assets/scss/google-btn.css';
 
 const LoginPage = () => {
     
@@ -19,8 +22,7 @@ const LoginPage = () => {
     const { email, password } = formValues;
 
     const handleGoogleLogin = () => {
-        dispatch( startGoogleLogin() );
-        navigate('/home');
+        dispatch( startGoogleLogin( navigate ) );
     }
 
     const handleLogin = ( e ) => {

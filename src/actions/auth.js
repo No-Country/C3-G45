@@ -1,23 +1,26 @@
-import { firebase, googleAuthProvider, db } from '../base/firebase-config';
+import { firebase, googleAuthProvider } from '../base/firebase-config';
 
 import { types } from "../types/types";
 
+/* Login and Google Login actions */
 export const startLoginEmailPass = (email, password) => {
     return (dispatch) => {
-        dispatch( login( email, password ) )
+        dispatch( login( email, password ) );
     }
 }
 
-export const startGoogleLogin = () => {
+export const startGoogleLogin = ( navigate ) => {
     return ( dispatch ) => {
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
+                console.log(user)
                 dispatch(
                     login( user.uid, user.displayName )
                 )
-            });
 
+                navigate('/home');
+            });
     }
 }
 
@@ -29,6 +32,26 @@ export const login = ( uid, displayName ) => ({
     }
 });
 
+/* Register actions */
+export const startRegister = ( uid, firstName, lastName, userName, email, password ) => {
+    return (dispatch) => {
+        dispatch( register( uid, firstName, lastName, userName, email, password ) );
+    }
+}
+
+export const register = ( uid, firstName, lastName, userName, email, password ) => ({
+    type: types.register,
+    payload: {
+        uid,
+        firstName,
+        lastName,
+        userName,
+        email,
+        password
+    }
+})
+
+/* Logout actions */
 export const startLogout = () => {
     return (dispatch) => {
         dispatch( logout() )

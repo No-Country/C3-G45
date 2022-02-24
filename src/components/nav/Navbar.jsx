@@ -4,14 +4,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserNav from './UserNav';
 import LoginNav from './LoginNav';
-import { store } from '../../store/store';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
 
   const state = useSelector( state => state);
 
-  console.log(state.auth.session);
+  console.log(state);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

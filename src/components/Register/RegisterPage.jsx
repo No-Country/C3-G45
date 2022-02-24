@@ -3,49 +3,50 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import validator from 'validator';
+import { v4 as uuidv4 } from 'uuid';
+import { startRegister } from '../../actions/auth';
 import { removeError, setError } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
 import './register.css';
+import { useSelector } from 'react-redux';
 
 const RegisterPage = () => {
 
     const dispatch = useDispatch();
+    const { ui } = useSelector( state => state);
 
     const [ formValues, handleInputChange ] = useForm({
-        firstName: "Luca",
-        lastName: "Rojas Massey",
-        userName: "LucaRM95",
-        email: "lucasrojas95@gmail.com",
-        password: "1234567"
+        uid: uuidv4()
     });
 
-    const { firstName, lastName, userName, email, password } = formValues;
+    const { uid, firstName, lastName, userName, email, password } = formValues;
 
     const handleRegister = (e) => {
         e.preventDefault();
 
         if ( isFormValid() ){
-            console.log("Formulario correcto!");
-            console.log( firstName, lastName, userName, email, password );
+            dispatch( startRegister( uid, firstName, lastName, userName, email, password ) )
         }
     }
 
     const isFormValid = () => {
-        
-        if ( firstName.trim().length <= 1 ) {
+        if ( firstName === undefined && lastName === undefined && email === undefined && userName === undefined && password === undefined){
+            dispatch( setError("The fields shouldn't empty") )
+            return false
+        } else if ( firstName === undefined || firstName.trim().length <= 1 ) {
             dispatch( setError("First name is required and should be at least 2 characters") )
             return false;
-        } else if ( lastName.trim().length <= 1 ) {
+        } else if ( lastName === undefined || lastName.trim().length <= 1 ) {
             dispatch( setError("Last name is required and should be at least 2 characters") )
             return false;
-        } else if ( !validator.isEmail( email ) ) {
+        } else if ( email === undefined || !validator.isEmail( email ) ) {
             dispatch( setError("Email is not valid") )
             return false;
-        } else if ( userName.trim().length <= 3 ) {
+        } else if ( userName === undefined || userName.trim().length <= 3 ) {
             dispatch( setError("User name is required and should be at least 3 characters") )
             return false;
-        } else if ( password.length < 5 ) {
-            dispatch( setError("Password should be at least 6 characters") )
+        } else if ( password === undefined || password.length < 5 ) {
+            dispatch( setError("Password is required and should be at least 6 characters") )
             return false
         }
         
@@ -70,21 +71,29 @@ const RegisterPage = () => {
                         <div className="mb-4">
                             <h2>Register your account</h2>
                         </div>
+                        {
+                            (ui.msgError !== null) 
+                            ?
+                                <div className="mb-4 auth__alert-error">
+                                    <strong>{ui.msgError}</strong> 
+                                </div> 
+                            :   
+                                <div></div>
+                        }
                         <div className="mb-4">
-                            <p>hola</p>
-                            <input type="text" className="form-control" name="firstName" placeholder="First Name" onChange={ handleInputChange } value={ firstName }/>
+                            <input type="text" className="form-control" name="firstName" placeholder="First Name" onChange={ handleInputChange } />
                         </div>
                         <div className="mb-4">
-                            <input type="text" className="form-control" name="lastName" placeholder="Last Name" onChange={ handleInputChange } value={ lastName }/>
+                            <input type="text" className="form-control" name="lastName" placeholder="Last Name" onChange={ handleInputChange } />
                         </div>
                         <div className="mb-4">
-                            <input type="email" className="form-control" name="email" placeholder="Email" onChange={ handleInputChange } value={ email }/>
+                            <input type="email" className="form-control" name="email" placeholder="Email" onChange={ handleInputChange } />                    
                         </div>
                         <div className="mb-4">
-                            <input type="text" className="form-control" name="userName" placeholder="User Name" onChange={ handleInputChange } value={ userName }/>
+                            <input type="text" className="form-control" name="userName" placeholder="User Name" onChange={ handleInputChange } />
                         </div>
                         <div className="mb-4">
-                            <input type="password" className="form-control" name="password" placeholder="Password" onChange={ handleInputChange } value={ password }/>
+                            <input type="password" className="form-control" name="password" placeholder="Password" onChange={ handleInputChange } />
                         </div>
                         <button type="submit" className="btn btn-primary">Register</button>
                     </form>

@@ -8,18 +8,20 @@ import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
 
 import '../Register/register.css';
 import '../../assets/scss/google-btn.css';
+import { useIsFormValid } from '../../validation/useIsFormValid';
 
 const LoginPage = () => {
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const {isFormValidLogin} = useIsFormValid();
+
     const [ formValues, handleInputChange ] = useForm({
-        email: "lucasrojas95@gmail.com",
-        password: "1234567"
+        uid: uuidv4(),
     });
 
-    const { email, password } = formValues;
+    const { uid, email, password } = formValues;
 
     const handleGoogleLogin = () => {
         dispatch( startGoogleLogin( navigate ) );
@@ -27,9 +29,11 @@ const LoginPage = () => {
 
     const handleLogin = ( e ) => {
         e.preventDefault();
-        dispatch( startLoginEmailPass( email, password ) );
-
-        navigate('/home');
+        if( isFormValidLogin( email, password ) ){
+            dispatch( startLoginEmailPass( uid, email, password ) );
+    
+            navigate('/home');
+        }
     }
     return (
         <div className="container-fluid container-form">

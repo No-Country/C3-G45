@@ -1,57 +1,38 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-import validator from 'validator';
 import { v4 as uuidv4 } from 'uuid';
-import { startRegister } from '../../actions/auth';
-import { removeError, setError } from '../../actions/ui';
+import { startLoginEmailPass, startRegister } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import './register.css';
 import { useSelector } from 'react-redux';
+import { useIsFormValid } from '../../validation/useIsFormValid';
 
 const RegisterPage = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { ui } = useSelector( state => state);
 
+    const { isFormValidRegister } = useIsFormValid();
+    
     const [ formValues, handleInputChange ] = useForm({
         uid: uuidv4()
     });
-
+    
     const { uid, firstName, lastName, userName, email, password } = formValues;
-
+    
+    
     const handleRegister = (e) => {
         e.preventDefault();
 
-        if ( isFormValid() ){
-            dispatch( startRegister( uid, firstName, lastName, userName, email, password ) )
-        }
-    }
+        if ( isFormValidRegister( firstName, lastName, userName, email, password ) ){
+            dispatch( startRegister( uid, firstName, lastName, userName, email, password ) );
+            dispatch ( startLoginEmailPass( uid, email, password ) );
 
-    const isFormValid = () => {
-        if ( firstName === undefined && lastName === undefined && email === undefined && userName === undefined && password === undefined){
-            dispatch( setError("The fields shouldn't empty") )
-            return false
-        } else if ( firstName === undefined || firstName.trim().length <= 1 ) {
-            dispatch( setError("First name is required and should be at least 2 characters") )
-            return false;
-        } else if ( lastName === undefined || lastName.trim().length <= 1 ) {
-            dispatch( setError("Last name is required and should be at least 2 characters") )
-            return false;
-        } else if ( email === undefined || !validator.isEmail( email ) ) {
-            dispatch( setError("Email is not valid") )
-            return false;
-        } else if ( userName === undefined || userName.trim().length <= 3 ) {
-            dispatch( setError("User name is required and should be at least 3 characters") )
-            return false;
-        } else if ( password === undefined || password.length < 5 ) {
-            dispatch( setError("Password is required and should be at least 6 characters") )
-            return false
+            navigate("/home");
         }
-        
-        dispatch( removeError() );
-       return true;
     }
 
     return (

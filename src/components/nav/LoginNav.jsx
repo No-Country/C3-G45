@@ -22,16 +22,6 @@ const LoginNav = () => {
           Carrito
         </Link>
       </li>
-      <li className="nav-item">
-        <Link
-          className="nav-link"
-          id="registrar"
-          to="/home"
-          onClick={handleLogout}
-        >
-          Logout
-        </Link>
-      </li>
     </ul>
   );
 };

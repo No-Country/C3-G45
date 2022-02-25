@@ -3,9 +3,9 @@ import { firebase, googleAuthProvider } from '../base/firebase-config';
 import { types } from "../types/types";
 
 /* Login and Google Login actions */
-export const startLoginEmailPass = (email, password) => {
+export const startLoginEmailPass = (uid, email, password) => {
     return (dispatch) => {
-        dispatch( login( email, password ) );
+        dispatch( login( uid, email, password ) );
     }
 }
 
@@ -24,11 +24,12 @@ export const startGoogleLogin = ( navigate ) => {
     }
 }
 
-export const login = ( uid, displayName ) => ({
+export const login = ( uid, displayName, password ) => ({
     type: types.login,
     payload: {
         uid,
-        displayName
+        displayName,
+        password
     }
 });
 

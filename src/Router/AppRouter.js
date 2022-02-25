@@ -6,6 +6,7 @@ import PrincipalSection from "../components/principal/PrincipalSection";
 import RegisterPage from "../components/Register/RegisterPage";
 
 const AppRouter = () => {
+
   return (
     <Routes>
       <Route path="/" element={<PrincipalSection />} />

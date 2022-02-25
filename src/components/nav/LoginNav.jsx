@@ -1,14 +1,7 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { startLogout } from "../../actions/auth";
 
 const LoginNav = () => {
-  const dispatch = useDispatch();
-
-  const handleLogout = () => {
-    dispatch(startLogout());
-  };
 
   return (
     <ul className="navbar-nav">

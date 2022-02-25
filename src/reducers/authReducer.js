@@ -1,10 +1,6 @@
 import { types } from "../types/types";
 
-const initialState = {
-  session: false
-}
-
-export const authReducer = (state = initialState, action) => {
+export const authReducer = (state = { }, action) => {
   console.log(action);
   switch (action.type) {
     case types.login:
@@ -32,6 +28,6 @@ export const authReducer = (state = initialState, action) => {
       };
 
     default:
-      return state;
+      return { state, session: false };
   }
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { startLogout } from "../../actions/auth";
 import { useSelector } from "react-redux";
 import BtnProfile from "./components/BtnProfile";
@@ -43,14 +42,14 @@ const ProfilePage = () => {
         </div>
 
         <div className="col-12 card-container">
-          <BtnProfile title="Cambiar Contraseña" iconClassNames="fas fa-user-lock icon-profile"
+          <BtnProfile title="Change password" iconClassNames="fas fa-user-lock icon-profile"
             linkTo="./" className="onHover" />
-          <BtnProfile title="Mis Entradas" iconClassNames="fas fa-sign-out-alt icon-profile"
-            linkTo="./" className="onHover" onClick={handleLogout} />
-          <BtnProfile title="Mis Compras" iconClassNames="fas fa-shopping-bag icon-profile"
+          <BtnProfile title="Purchases" iconClassNames="fas fa-shopping-bag icon-profile"
             linkTo="./" className="onHover" />
-          <BtnProfile title="Mis Entradas" iconClassNames="fas fa-ticket-alt icon-profile"
+          <BtnProfile title="Entries" iconClassNames="fas fa-ticket-alt icon-profile"
             linkTo="./" className="onHover" />
+          <BtnProfile title="Logout" iconClassNames="fas fa-sign-out-alt icon-profile"
+            linkTo="/home" className="onHover" click={ handleLogout } />
           {/* start change password
           <Link className="onHover" to="./" className="link-change-password">
             <div className="div-change-password">

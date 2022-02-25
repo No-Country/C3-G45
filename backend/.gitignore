@@ -1,6 +1,6 @@
 #pip list --format=freeze > requirements.txt
 __pycache__
-products/__pycache__
+__pycache__/
 db.sqlite3
 
 env

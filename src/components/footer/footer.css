@@ -1,6 +1,6 @@
 .footer {
   background-color: #04020f;
-  text-align: center;
+  text-align      : center;
 }
 
 .footer p,
@@ -14,7 +14,7 @@ i {
 
 .footer a:hover,
 i:hover {
-  color: #ccc;
+  color     : #ccc;
   transition: 300ms all;
 }
 
@@ -23,6 +23,6 @@ i:hover {
 }
 
 .fab:hover {
-  transform: scale(1.2);
+  transform : scale(1.2);
   transition: 300ms all;
 }

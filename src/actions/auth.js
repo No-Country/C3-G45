@@ -5,18 +5,18 @@ import { types } from "../types/types";
 /* Login and Google Login actions */
 export const startLoginEmailPass = (uid, email, password) => {
     return (dispatch) => {
-        dispatch( login( uid, email, password ) );
+        dispatch(login(uid, email, password));
     }
 }
 
-export const startGoogleLogin = ( navigate ) => {
-    return ( dispatch ) => {
+export const startGoogleLogin = (navigate) => {
+    return (dispatch) => {
 
-        signInWithPopup( auth, googleAuthProvider )
-            .then( ({ user }) => {
+        signInWithPopup(auth, googleAuthProvider)
+            .then(({ user }) => {
                 console.log(user)
                 dispatch(
-                    login( user.uid, user.displayName )
+                    login(user.uid, user.displayName)
                 )
 
                 navigate('/home');
@@ -24,7 +24,7 @@ export const startGoogleLogin = ( navigate ) => {
     }
 }
 
-export const login = ( uid, displayName, password ) => ({
+export const login = (uid, displayName, password) => ({
     type: types.login,
     payload: {
         uid,
@@ -34,13 +34,13 @@ export const login = ( uid, displayName, password ) => ({
 });
 
 /* Register actions */
-export const startRegister = ( uid, firstName, lastName, userName, email, password ) => {
+export const startRegister = (uid, firstName, lastName, userName, email, password) => {
     return (dispatch) => {
-        dispatch( register( uid, firstName, lastName, userName, email, password ) );
+        dispatch(register(uid, firstName, lastName, userName, email, password));
     }
 }
 
-export const register = ( uid, firstName, lastName, userName, email, password ) => ({
+export const register = (uid, firstName, lastName, userName, email, password) => ({
     type: types.register,
     payload: {
         uid,
@@ -55,11 +55,11 @@ export const register = ( uid, firstName, lastName, userName, email, password ) 
 /* Logout actions */
 export const startLogout = () => {
     return (dispatch) => {
-        dispatch( logout() )
+        dispatch(logout())
     }
 }
 
 export const logout = () => ({
     type: types.logout,
-    payload: {  }
+    payload: {}
 })

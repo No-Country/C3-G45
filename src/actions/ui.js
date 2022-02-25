@@ -1,7 +1,7 @@
 import { types } from "../types/types";
 
 
-const setError = ( err ) => ({
+const setError = (err) => ({
     type: types.uiSetError,
     payload: err
 });

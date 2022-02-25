@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { startLogout } from "../../actions/auth";
 import { useSelector } from "react-redux";
+import BtnProfile from "./components/BtnProfile";
 
 const ProfilePage = () => {
   const state = useSelector((state) => state);
@@ -42,30 +43,19 @@ const ProfilePage = () => {
         </div>
 
         <div className="col-12 card-container">
-          {/*start change password*/}
+          <BtnProfile title="Cambiar Contraseña" iconClassNames="fas fa-user-lock icon-profile"
+            linkTo="./" className="onHover" />
+          <BtnProfile title="Mis Entradas" iconClassNames="fas fa-sign-out-alt icon-profile"
+            linkTo="./" className="onHover" onClick={handleLogout} />
+          <BtnProfile title="Mis Compras" iconClassNames="fas fa-shopping-bag icon-profile"
+            linkTo="./" className="onHover" />
+          <BtnProfile title="Mis Entradas" iconClassNames="fas fa-ticket-alt icon-profile"
+            linkTo="./" className="onHover" />
+          {/* start change password
           <Link className="onHover" to="./" className="link-change-password">
             <div className="div-change-password">
               <div className="container-change-password">
-                <svg
-                  width="38"
-                  height="38"
-                  viewBox="0 0 38 38"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    opacity="0.1"
-                    width="38"
-                    height="38"
-                    rx="19"
-                    fill="#23286B"
-                  />
-                  <path
-                    d="M24 14H29V24H24V26C24 26.2652 24.1054 26.5196 24.2929 26.7071C24.4804 
-                                    26.8946 24.7348 27 25 27H27V29H24.5C23.95 29 23 28.55 23 28C23 28.55 22.05 29 21.5 29H19V27H21C21.2652 27 21.5196 26.8946 21.7071 26.7071C21.8946 26.5196 22 26.2652 22 26V12C22 11.7348 21.8946 11.4804 21.7071 11.2929C21.5196 11.1054 21.2652 11 21 11H19V9H21.5C22.05 9 23 9.45 23 10C23 9.45 23.95 9 24.5 9H27V11H25C24.7348 11 24.4804 11.1054 24.2929 11.2929C24.1054 11.4804 24 11.7348 24 12V14ZM9 14H20V16H11V22H20V24H9V14ZM27 22V16H24V22H27ZM15.5 19C15.5 18.6022 15.342 18.2206 15.0607 17.9393C14.7794 17.658 14.3978 17.5 14 17.5C13.6022 17.5 13.2206 17.658 12.9393 17.9393C12.658 18.2206 12.5 18.6022 12.5 19C12.5 19.3978 12.658 19.7794 12.9393 20.0607C13.2206 20.342 13.6022 20.5 14 20.5C14.3978 20.5 14.7794 20.342 15.0607 20.0607C15.342 19.7794 15.5 19.3978 15.5 19V19ZM20 17.89C19.39 17.33 18.44 17.38 17.88 18C17.32 18.6 17.37 19.55 18 20.11C18.55 20.63 19.43 20.63 20 20.11V17.89V17.89Z"
-                    fill="#23286B"
-                  />
-                </svg>
+                <i className="fas fa-user-lock icon-profile"></i>
               </div>
               <div className="text-change-password">
                 <p className="p-change-password">Cambiar contraseña</p>
@@ -74,7 +64,7 @@ const ProfilePage = () => {
           </Link>
           {/*End change password*/}
           {/*start change password */}
-          <Link
+          {/* <Link
             className="onHover"
             className="link-change-password"
             to="/home"
@@ -82,32 +72,36 @@ const ProfilePage = () => {
           >
             <div className="div-change-password">
               <div className="container-change-password">
-                <svg
-                  width="38"
-                  height="38"
-                  viewBox="0 0 38 38"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    opacity="0.1"
-                    width="38"
-                    height="38"
-                    rx="19"
-                    fill="#23286B"
-                  />
-                  <path
-                    d="M10 13C10 12.4696 10.2107 11.9609 10.5858 11.5858C10.9609 11.2107 11.4696 11 12 11H21C21.5304 11 22.0391 11.2107 22.4142 11.5858C22.7893 11.9609 23 12.4696 23 13V15C23 15.2652 22.8946 15.5196 22.7071 15.7071C22.5196 15.8946 22.2652 16 22 16C21.7348 16 21.4804 15.8946 21.2929 15.7071C21.1054 15.5196 21 15.2652 21 15V13H12V25H21V23C21 22.7348 21.1054 22.4804 21.2929 22.2929C21.4804 22.1054 21.7348 22 22 22C22.2652 22 22.5196 22.1054 22.7071 22.2929C22.8946 22.4804 23 22.7348 23 23V25C23 25.5304 22.7893 26.0391 22.4142 26.4142C22.0391 26.7893 21.5304 27 21 27H12C11.4696 27 10.9609 26.7893 10.5858 26.4142C10.2107 26.0391 10 25.5304 10 25V13ZM25.293 15.293C25.4805 15.1055 25.7348 15.0002 26 15.0002C26.2652 15.0002 26.5195 15.1055 26.707 15.293L29.707 18.293C29.8945 18.4805 29.9998 18.7348 29.9998 19C29.9998 19.2652 29.8945 19.5195 29.707 19.707L26.707 22.707C26.5184 22.8892 26.2658 22.99 26.0036 22.9877C25.7414 22.9854 25.4906 22.8802 25.3052 22.6948C25.1198 22.5094 25.0146 22.2586 25.0123 21.9964C25.01 21.7342 25.1108 21.4816 25.293 21.293L26.586 20H17C16.7348 20 16.4804 19.8946 16.2929 19.7071C16.1054 19.5196 16 19.2652 16 19C16 18.7348 16.1054 18.4804 16.2929 18.2929C16.4804 18.1054 16.7348 18 17 18H26.586L25.293 16.707C25.1055 16.5195 25.0002 16.2652 25.0002 16C25.0002 15.7348 25.1055 15.4805 25.293 15.293Z"
-                    fill="#23286B"
-                  />
-                </svg>
+                <i className="fas fa-sign-out-alt icon-profile" ></i>
               </div>
               <div className="text-change-password">
                 <p className="p-change-password">Cerrar sesión</p>
               </div>
             </div>
-          </Link>
+          </Link> */}
           {/*end change password */}
+          {/* <Link className="onHover" to="./" className="link-change-password">
+            <div className="div-change-password">
+              <div className="container-change-password">
+                <i className="fas fa-shopping-bag icon-profile" ></i>
+              </div>
+              <div className="text-change-password">
+                <p className="p-change-password">Mis compras</p>
+              </div>
+            </div>
+          </Link>
+          <Link className="onHover" to="./" className="link-change-password">
+            <div className="div-change-password">
+              <div className="container-change-password">
+                <i className="fas fa-ticket-alt icon-profile"></i>
+              </div>
+              <div className="text-change-password">
+                <p className="p-change-password">Mis Entradas</p>
+              </div>
+            </div>
+          </Link> */}
+
+
         </div>
       </div>
     </div>

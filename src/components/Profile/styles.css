@@ -1,45 +1,18 @@
 .profile-container {
-  max-width: 400px;
+  max-width    : 400px;
   margin-bottom: 3em;
-  height: 100vh;
+  height       : 100vh;
 }
+
 .profile-h1 {
   padding-top: 1rem;
 }
+
 .card-container {
-  border: solid 1px gray;
-  border-radius: 5px;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+  border          : solid 1px gray;
+  border-radius   : 5px;
+  padding         : 0;
+  display         : flex;
+  flex-direction  : column;
   background-color: #e5e5e5;
-}
-.link-change-password {
-  text-decoration: none;
-  margin: 0;
-  color: black;
-}
-.div-change-password {
-  display: flex;
-  border-bottom: solid 1px gray;
-  padding: 1em 0;
-}
-.container-change-password {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.text-change-password {
-  padding: 0;
-  margin: 0;
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.p-change-password {
-  font-weight: 750;
-  padding: 0;
-  margin: 0;
 }

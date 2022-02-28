@@ -7,32 +7,36 @@ import { useForm } from '../../hooks/useForm';
 import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
 
 import '../Register/register.css';
-import '../../assets/scss/google-btn.css';
+import './LogIn.css';
 import { useIsFormValid } from '../../validation/useIsFormValid';
 
 const LoginPage = () => {
-    
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const {isFormValidLogin} = useIsFormValid();
+    const { isFormValidLogin } = useIsFormValid();
 
-    const [ formValues, handleInputChange ] = useForm({
+    const [formValues, handleInputChange] = useForm({
         uid: uuidv4(),
     });
 
     const { uid, email, password } = formValues;
 
     const handleGoogleLogin = () => {
-        dispatch( startGoogleLogin( navigate ) );
+        dispatch(startGoogleLogin(navigate));
     }
 
+<<<<<<< HEAD
     const handleLogin = ( e ) => {
         
+=======
+    const handleLogin = (e) => {
+>>>>>>> 5b9075765a000e6d70840d6217cbfca473a36b4b
         e.preventDefault();
-        if( isFormValidLogin( email, password ) ){
-            dispatch( startLoginEmailPass( uid, email, password ) );
-    
+        if (isFormValidLogin(email, password)) {
+            dispatch(startLoginEmailPass(uid, email, password));
+
             navigate('/home');
         }
     }
@@ -40,42 +44,48 @@ const LoginPage = () => {
         <div className="container-fluid container-form">
             <div className="row row-form justify-content-center">
                 <div className="col col-lg-8 mt-5 mb-5">
-                    <form className="form-style" onSubmit={ handleLogin }>
+                    <form className="form-style" onSubmit={handleLogin}>
                         <div className="mb-4">
-                            <h2>Login with your account</h2>
+                            <h2 className=' title-login'>Login with your account</h2>
                         </div>
                         <div className="mb-4">
-                            <input type="email" className="form-control" name="email" placeholder="Email" onChange={ handleInputChange } />
+                            <input type="email" className="form-control" name="email" placeholder="Email" onChange={handleInputChange} />
                         </div>
                         <div className="mb-4">
-                            <input type="password" className="form-control" name="password" placeholder="Password" onChange={ handleInputChange } />
+                            <input type="password" className="form-control" name="password" placeholder="Password" onChange={handleInputChange} />
                         </div>
 
-                        <button 
-                            type="submit" 
-                            className="btn btn-primary"
+                        <button
+                            type="submit"
+                            className="btn btn-primary form-control"
                         >
                             Login
                         </button>
 
-                        <div className="auth__social-networks mt-5">
+                        <div className="social-networks mt-5">
                             <p>Login with social networks</p>
 
+<<<<<<< HEAD
                             <div
                                 className="google-btn"
                                 onClick={ handleGoogleLogin() }
                             >
                                 <div className="google-icon-wrapper">
                                     <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
+=======
+                            <div className="google-btn"
+                                onClick={handleGoogleLogin}>
+
+                                <i className='fab fa-google google-icon fa-lg'></i>
+                                <div className='container-btn-text'>
+                                    <p className="btn-text">Sign in with google</p>
+>>>>>>> 5b9075765a000e6d70840d6217cbfca473a36b4b
                                 </div>
-                                <p className="btn-text">
-                                    <b>Sign in with google</b>
-                                </p>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div className="col-lg-4 video-link">
+                <div className="col-lg-4 register-section">
                     <i className="fas fa-angle-down"></i>
                     <h2>
                         <p>JOIN</p>

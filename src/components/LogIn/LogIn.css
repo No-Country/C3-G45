@@ -1,0 +1,54 @@
+.title-login {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.google-btn {
+    cursor          : pointer;
+    width           : 100%;
+    background-color: #46afcc;
+    border-radius   : 2px;
+    box-shadow      : 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    transition      : box-shadow .3s ease;
+}
+
+.google-btn:hover {
+    box-shadow: 0 0 6px #46afcc;
+}
+
+.google-btn:active {
+    background: #7622f0;
+}
+
+
+.google-icon {
+    padding: 1.1rem;
+    width  : 30%;
+}
+
+.container-btn-text {
+    display: inline-block;
+}
+
+.btn-text {
+    text-align: right;
+
+    margin        : auto !important;
+    color         : #fff;
+    font-size     : 1.1rem;
+    font-weight   : bold;
+    letter-spacing: 0.2px;
+}
+
+.register-section {
+    display        : flex;
+    flex-flow      : column wrap;
+    justify-content: center;
+    align-items    : center;
+}
+
+@media(max-width: 280px) {
+    .btn-text {
+        margin   : 13px 8px 0 0;
+        font-size: 11px;
+    }
+}

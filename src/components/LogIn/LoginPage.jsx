@@ -27,12 +27,7 @@ const LoginPage = () => {
         dispatch(startGoogleLogin(navigate));
     }
 
-<<<<<<< HEAD
-    const handleLogin = ( e ) => {
-        
-=======
     const handleLogin = (e) => {
->>>>>>> 5b9075765a000e6d70840d6217cbfca473a36b4b
         e.preventDefault();
         if (isFormValidLogin(email, password)) {
             dispatch(startLoginEmailPass(uid, email, password));
@@ -65,21 +60,12 @@ const LoginPage = () => {
                         <div className="social-networks mt-5">
                             <p>Login with social networks</p>
 
-<<<<<<< HEAD
-                            <div
-                                className="google-btn"
-                                onClick={ handleGoogleLogin() }
-                            >
-                                <div className="google-icon-wrapper">
-                                    <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />
-=======
                             <div className="google-btn"
                                 onClick={handleGoogleLogin}>
 
                                 <i className='fab fa-google google-icon fa-lg'></i>
                                 <div className='container-btn-text'>
                                     <p className="btn-text">Sign in with google</p>
->>>>>>> 5b9075765a000e6d70840d6217cbfca473a36b4b
                                 </div>
                             </div>
                         </div>

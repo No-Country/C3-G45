@@ -28,6 +28,7 @@ const LoginPage = () => {
     }
 
     const handleLogin = ( e ) => {
+        
         e.preventDefault();
         if( isFormValidLogin( email, password ) ){
             dispatch( startLoginEmailPass( uid, email, password ) );
@@ -62,7 +63,7 @@ const LoginPage = () => {
 
                             <div
                                 className="google-btn"
-                                onClick={ handleGoogleLogin }
+                                onClick={ handleGoogleLogin() }
                             >
                                 <div className="google-icon-wrapper">
                                     <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google button" />

@@ -11,8 +11,9 @@ import AppRouter from '../../Router/AppRouter';
 import './App.css';
 
 function App() {
+  
   return (
-
+    
     <Provider store={ store }>
       <BrowserRouter>
         <div className="App">

@@ -18,7 +18,7 @@ function Items({ currentItems }) {
   );
 }
 
-function Pagination({ itemsPerPage }) {
+function Pagination({ itemsPerPage, items }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);

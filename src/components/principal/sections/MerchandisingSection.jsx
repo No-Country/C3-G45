@@ -2,6 +2,7 @@ import React from "react";
 import TicketsCards from "../../TicketsCards/TicketsCards";
 
 const MerchandisingSection = () => {
+
   return (
     <div className="container mt-5 mb-5 container-tickets">
       <div className="row mt-5">

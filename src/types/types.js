@@ -12,4 +12,6 @@ export const types = {
     uiSetError: "[UI] Set Error",
     uiRemoveError: "[UI] Remove Error",
 
+    /*Data types*/
+    getEvents: "[EVNTS] Get Events"
 }

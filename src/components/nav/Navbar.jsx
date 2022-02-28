@@ -10,8 +10,6 @@ const Navbar = () => {
 
   const state = useSelector(state => state);
 
-  console.log(state);
-
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">

@@ -12,12 +12,8 @@ import { startGetEvents } from '../../actions/events';
 
 const PrincipalSection = () => {
 
-    const { data } = useAxios();
-    const dispatch = useDispatch();
+    useAxios();
 
-    if(data.length > 0){
-        dispatch( startGetEvents(data) )
-    }
     return (
         <>
             <Header />

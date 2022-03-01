@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import miniature from "../../assets/img/dua-lipa-miniature.jpg";
+// import miniature from "../../assets/img/dua-lipa-miniature.jpg";
 
 const TicketsCards = () => {
 
@@ -19,7 +19,7 @@ const TicketsCards = () => {
                 <div className="col">
                     <div className="row row-cols-1 ">
                         {
-                            data.events.map( e => {
+                            data.events.data.map( e => {
                                 return (
                                     <div key={e.id} className="container card mb-5 p-0">
                                         <div className="row g-0">

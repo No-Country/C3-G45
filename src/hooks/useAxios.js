@@ -1,27 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { startGetEvents } from '../actions/events';
 import getItem from '../helpers/getItem';
 
 const useAxios = () => {
 
-    const [item, setItem] = useState({
-        data: [],
-        loading: true
-    });
+    const dispatch = useDispatch();
 
-    useEffect(() => {
-        getItem()
-            .then( productos => {
-                setItem({
-                    data: productos,
-                    loading: false
-                });
-            })
-            .catch( () => {
-                alert("Hubo un problema al realizar la busqueda");
-            })
-    }, [])
-
-    return item;
+    getItem()
+        .then(events => {
+            dispatch( startGetEvents({
+                data: events,
+                loading: false
+            }));
+        })
+        .catch(() => {
+            alert("Hubo un problema al realizar la busqueda");
+        })
 }
 
 export default useAxios;

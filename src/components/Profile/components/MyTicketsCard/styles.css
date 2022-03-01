@@ -1,3 +1,11 @@
-.ticketUser{
-    background-color: #A737FA;
+.ticketUser {
+  margin: 1em 0;
+  border-radius: 1em;
+}
+.ticketContainer {
+  background-color: black;
+  max-width: 580px;
+}
+.ticketImg {
+  background-image: url("../../../../assets/img/dua-lipa.jpg");
 }

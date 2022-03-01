@@ -1,0 +1,18 @@
+li {
+  display: inline-flex;
+  margin: 0;
+  padding-left: 0;
+}
+ul {
+  text-align: center;
+  align-items: center;
+  display: inline-block;
+  padding: 0;
+}
+.containerPagination a {
+  text-decoration: none;
+  color: white;
+}
+.containerPagination {
+  text-align: center;
+}

@@ -98,7 +98,39 @@ const items = [
 ];
 
 const MyTickets = () => {
-  return <Pagination itemsPerPage={2} items={items} />;
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="contianer-fluid bg-my-tickets">
+            Hi, {/* Hi, {state.auth.name} */}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 text-center">
+            <h1 className="profile-h1">My Tickets</h1>
+          </div>
+          <div className="row">
+            <div className="col-12 text-center">
+              <div>
+                <h2>Upcoming Events</h2>
+              </div>
+              <Pagination itemsPerPage={2} items={items} />
+            </div>
+          </div>
+          <div className="col-12 card-container">
+            {/* <BtnProfile
+              title="Purchases"
+              iconClassNames="fas fa-shopping-bag icon-profile"
+              linkTo="/myPurchases"
+              className="onHover"
+            /> */}
+          </div>
+        </div>
+      </div>
+      ;
+    </>
+  );
 };
 
 export default MyTickets;

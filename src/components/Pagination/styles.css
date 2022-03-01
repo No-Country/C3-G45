@@ -8,11 +8,22 @@ ul {
   align-items: center;
   display: inline-block;
   padding: 0;
+  margin-bottom: 0;
 }
 .containerPagination a {
   text-decoration: none;
   color: white;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 3px;
+}
+.containerPagination a:hover {
+  background-color: #e922ff;
+}
+.containerPagination a:focus {
+  background-color: #e922ff;
 }
 .containerPagination {
   text-align: center;
+  margin: 2em;
 }

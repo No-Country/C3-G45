@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import ReactPaginate from "react-paginate";
-import MyTicketCard from "../Profile/components/MyTicketsCard/MyTicketsCard";
-import "./styles.css";
+import MyTicketCard from "../User/components/MyTicketsCard/MyTicketsCard";
 
 // Example items, to simulate fetching from another resources.
 
@@ -42,17 +40,15 @@ function Pagination({ itemsPerPage, items }) {
   return (
     <>
       <Items currentItems={currentItems} items={Items} />
-      <div className="containerPagination">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={pageCount}
-          previousLabel="< previous"
-          renderOnZeroPageCount={null}
-        />
-      </div>
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={5}
+        pageCount={pageCount}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+      />
     </>
   );
 }

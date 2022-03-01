@@ -11,7 +11,7 @@ const getItem = async () => {
             date_event: e.date_event,
             description: e.description,
             get_absolute_url: e.get_absolute_url,
-            get_image: e.get_image,
+            image_event: e.image_event,
             get_thumbnail: e.get_thumbnail,
             id: e.id,
             id_tour: e.id_tour,

@@ -1,5 +1,4 @@
-import useAxios from "../hooks/useAxios"
-import { types } from "../types/types"
+import { types } from "../types/types";
 
 export const startGetEvents = ( events ) => {
 

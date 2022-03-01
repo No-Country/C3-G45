@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import ReactPaginate from "react-paginate";
-import MyTicketCard from "../Profile/components/MyTicketsCard/MyTicketsCard"
+import MyTicketCard from "../User/components/MyTicketsCard/MyTicketsCard"
 
 // Example items, to simulate fetching from another resources.
 

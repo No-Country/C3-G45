@@ -3,7 +3,7 @@ import "./styles.css";
 import { useDispatch } from "react-redux";
 import { startLogout } from "../../actions/auth";
 import { useSelector } from "react-redux";
-import BtnProfile from "./components/BtnProfile";
+import BtnProfile from "./components/BtnProfile/BtnProfile";
 
 const ProfilePage = () => {
   const state = useSelector((state) => state);

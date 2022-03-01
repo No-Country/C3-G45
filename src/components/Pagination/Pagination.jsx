@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import MyTicketCard from "../User/components/MyTicketsCard/MyTicketsCard"
 
 // Example items, to simulate fetching from another resources.
 
@@ -8,10 +9,7 @@ function Items({ currentItems }) {
     <>
       {currentItems &&
         currentItems.map((item) => (
-          <div>
-            <h3>Item #{item.name_product}</h3>
-            <p>{item.description}</p>
-          </div>
+         <MyTicketCard item={item}/>
         ))}
     </>
   );

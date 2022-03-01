@@ -98,6 +98,10 @@
   color: #04020f;
 }
 
+.card img{
+  height: 12rem;
+}
+
 .card-body {
   display: inline-block;
   position: absolute;

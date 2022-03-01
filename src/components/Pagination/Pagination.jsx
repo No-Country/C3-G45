@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
 import ReactPaginate from "react-paginate";
 
 // Example items, to simulate fetching from another resources.

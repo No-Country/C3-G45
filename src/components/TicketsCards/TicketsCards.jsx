@@ -24,7 +24,7 @@ const TicketsCards = () => {
                                     <div key={e.id} className="container card mb-5 p-0">
                                         <div className="row g-0">
                                             <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
-                                                <img src={miniature} alt="..." />
+                                                <img src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1/media/events/ticket_latam_owsqvf" alt="..." />
                                             </div>
                                             <div className="col-8">
                                                 <div className="container">

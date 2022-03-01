@@ -27,7 +27,6 @@ const LastEventsModal = () => {
           </div>
           <div className="modal-body">
             <TicketsCards />
-            <TicketsCards />
           </div>
         </div>
       </div>

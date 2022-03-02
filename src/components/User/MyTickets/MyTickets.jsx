@@ -1,8 +1,7 @@
 import React from "react";
 import Pagination from "../../Pagination/Pagination";
 import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
-import MyTicketsCard2 from "../components/MyTicketsCard2/MyTicketsCard2";
-
+import './MyTickets.css'
 const items = [
   {
     id: 3,
@@ -102,14 +101,21 @@ const items = [
 const MyTickets = () => {
   return (
     <>
-      <div className="container">
+      <div className="container-fluid cont-tickets">
         <div className="row">
-          <div className="contianer-fluid bg-my-tickets">
-            Hi, {/* Hi, {state.auth.name} */}
+          <div className="container-fluid">
+            <div className="bg-my-tickets">
+              <div className="sticky">
+                <p className="text-presentation" >Welcome, Hugo <br></br>
+                  Are you ready for the Show?</p>
+              </div>
+            </div>
           </div>
-
-          <button></button>
+          <div className="text-intro">
+            <h3>Check for the last Tickets</h3>
+          </div>
         </div>
+
         <div className="row">
           <div className="col-12 text-center">
             <h1 className="profile-h1">My Tickets</h1>
@@ -119,24 +125,15 @@ const MyTickets = () => {
               <div className="text-center">
                 <h2>Upcoming Events</h2>
                 <Pagination
-                  component={<MyTicketsCard2 />}
+                  component={<MyTicketsCard />}
                   itemsPerPage={2}
                   items={items}
                 />
               </div>
             </div>
           </div>
-          <div className="col-12 card-container">
-            {/* <BtnProfile
-              title="Purchases"
-              iconClassNames="fas fa-shopping-bag icon-profile"
-              linkTo="/myPurchases"
-              className="onHover"
-            /> */}
-          </div>
         </div>
       </div>
-      ;
     </>
   );
 };

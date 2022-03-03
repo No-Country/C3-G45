@@ -1,3 +1,10 @@
+// This is a functional component wrapping the Cart functionality
+// It consists of a Cart component and a CartItem component
+// The Cart component is responsible for rendering the CartItem component
+// The CartItem is its own component
+// We need to map the cartItems state to the CartItem component
+// CartItems comes from the global redux state
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -45,7 +52,7 @@ const Cart = () => {
                         <p className="text-muted">{e.date_event}</p>
                       </div>
                       <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-center">
-                        <button className="btn btn-primary" onClick={ handleDeleteItem }>
+                        <button className="btn btn-primary" onClick={handleDeleteItem}>
                           <i className="fas fa-times"></i>
                         </button>
                       </div>

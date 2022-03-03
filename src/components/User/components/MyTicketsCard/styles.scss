@@ -9,10 +9,7 @@ $main-blue: #e922ff !default;
 $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 
 /* This pen */
-.container-ticketsuser {
-  display: flex;
-  justify-content: center;
-}
+
 
 .status-event {
   position: absolute;
@@ -20,11 +17,16 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
   right: 0px;
   background-color: rgba(118, 34, 240, 0.6);
   min-width: 80px;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px 0px;
 }
 .status-event p {
   margin: auto;
   padding: 0.5rem 1rem;
   text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  
 }
 
 .dark {
@@ -72,14 +74,16 @@ a:hover {
   }
 
   .small {
-    font-size: 80%;
+    font-size: 100%;
   }
 
   .postcard__title {
     font-size: 1.75rem;
     font-family: "Josefin Sans", sans-serif;
   }
-
+  .postcard__subtitle i, button i{
+    padding-right: 0.7rem;
+  }
   .postcard__img {
     max-height: 180px;
     width: 100%;
@@ -176,7 +180,7 @@ a:hover {
     }
 
     .postcard__text {
-      padding: 3rem;
+      padding: 3rem 4rem;
       width: 100%;
     }
 

@@ -1,8 +1,25 @@
 import React from "react";
 import Pagination from "../../Pagination/Pagination";
-import MyTicketsCard2 from "../components/MyTicketsCard2/MyTicketsCard2";
+import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
 import "./MyTickets.css";
 const items = [
+  {
+    id: 4,
+    name_event: "Buenos Aires Concert",
+    description: "",
+    status_event: "SOON",
+    get_image:
+      "https://no-country-c03-g57-backend.herokuapp.com/media/events/road-g8566cdfab_640.jpg",
+    get_thumbnail:
+      "https://no-country-c03-g57-backend.herokuapp.com/media/events/ticket_latam.jpeg",
+    date_event: "2022-02-28T18:12:50Z",
+    city:"Ciudad Autonoma de Buenos Aires",
+    location: "Estadio SC",
+    get_absolute_url: "/tour-latam-2022/santiago-concert-santiago/",
+    products: [],
+    tickets: [],
+    id_tour: "Latam 2022",
+  },
   {
     id: 3,
     name_event: "Santiago Concert",
@@ -102,7 +119,7 @@ const MyTickets = () => {
   return (
     <>
       <div className="container-fluid cont-tickets">
-        <div className="row">
+        <div >
           <div className="container-fluid">
             <div className="bg-my-tickets">
               <div className="sticky">
@@ -113,30 +130,20 @@ const MyTickets = () => {
               </div>
             </div>
           </div>
-          <div className="text-intro">
-            <h3>Check for the last Tickets</h3>
+          <div className="container-fluid text-intro">
+            <h3> <i className="fas fa-angle-right"></i>Check the latest Tickets</h3>
           </div>
         </div>
       </div>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1 className="profile-h1">My Tickets</h1>
-          </div>
-          <div>
-            <div className="col-12">
-              <div>
-                <h2>Upcoming Events</h2>
-
-                <Pagination
-                  component={<MyTicketsCard2 />}
-                  itemsPerPage={2}
-                  items={items}
-                />
-              </div>
-            </div>
-          </div>
+      <div className="container tickets-user" >
+        <div className="text-intro" >
+          <h2>Upcoming Events</h2>
         </div>
+        <Pagination
+          component={<MyTicketsCard />}
+          itemsPerPage={3}
+          items={items}
+        />
       </div>
     </>
   );

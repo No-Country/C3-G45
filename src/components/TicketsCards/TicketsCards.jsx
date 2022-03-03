@@ -12,7 +12,7 @@ const TicketsCards = () => {
     const dispatch = useDispatch();
     
     const handleAddToCart = ( e ) => {
-        const node = Number(e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id);
+        const node = Number(e.target.id);
         const event = data.events.data.find( event => event.id === node );
         let currentCart = [];
         
@@ -25,7 +25,7 @@ const TicketsCards = () => {
         if(auth.session === false || auth.session === undefined){
             navigate("/login");
         }else{
-            dispatch(startAddToCart( currentCart ));
+            dispatch(startAddToCart( currentCart, node ));
         }
     }
 
@@ -44,7 +44,7 @@ const TicketsCards = () => {
                         {
                             data.events.data.map( e => {
                                 return (
-                                    <div key={e.id} id={e.id} className="container card mb-5 p-0">
+                                    <div key={e.id} className="container card mb-5 p-0">
                                         <div className="row g-0">
                                             <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
                                                 <img src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1/media/events/ticket_latam_owsqvf" alt="..." />
@@ -59,7 +59,7 @@ const TicketsCards = () => {
                                                             <p className="text-muted">{e.date_event}</p>
                                                         </div>
                                                         <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-end">
-                                                            <button className="btn btn-primary" onClick={ handleAddToCart }>
+                                                            <button className="btn btn-primary" id={e.id} onClick={ handleAddToCart }>
                                                                 Buy ticket
                                                             </button>
                                                         </div>

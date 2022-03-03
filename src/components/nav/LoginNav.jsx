@@ -11,7 +11,6 @@ const LoginNav = () => {
     contCart = 0;
   }else{
     contCart = cart.event.length
-    console.log(contCart)
   }
 
   return (

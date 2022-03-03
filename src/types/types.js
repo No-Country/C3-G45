@@ -6,12 +6,15 @@ export const types = {
     logout: "[Auth] Logout",
     
     /* Register type*/
-    register: "[REG] Register",
+    register: "[Reg] Register",
 
     /* Error types */
-    uiSetError: "[UI] Set Error",
-    uiRemoveError: "[UI] Remove Error",
+    uiSetError: "[Ui] Set Error",
+    uiRemoveError: "[Ui] Remove Error",
 
-    /*Data types*/
-    getEvents: "[EVNTS] Get Events"
+    /* Data types */
+    getEvents: "[Evnts] Get Events",
+
+    /* Cart types */
+    addToCart: "[Cart] Add to cart"
 }

@@ -1,0 +1,11 @@
+.cart-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 47rem;
+}
+
+.fa-frown:hover{
+    color: white;
+}

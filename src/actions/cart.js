@@ -1,29 +1,33 @@
 import { types } from "../types/types";
 
 export const startAddToCart = ( currentCart ) => {
+
     return (dispatch) => {
         dispatch( addToCart( currentCart ))
     }
 }
 
 const addToCart = ( currentCart ) => {
+    
     return {
         type: types.addToCart,
         payload: currentCart
     }
 }
 
-export const startRemoveItem = (currentCart, removeItem) => {
+/* Remove Item from cart */
+export const startRemoveItem = ( currentCart, item ) => {
 
-    const newCurrentCart = removeToCart( currentCart, removeItem );
+    const filteredOrder = currentCart.filter( event => event.id !== item);
 
     return (dispatch) => {
-        dispatch( addToCart( newCurrentCart ))
+        dispatch( removeToCart( filteredOrder ))
     }
 }
 
-const removeToCart = (currentCart, removeItem) => {
-    const newCurrentCart = currentCart.filter( item => item.id === removeItem );
-
-    return newCurrentCart;
+const removeToCart = ( filteredOrder ) => {
+    return{
+        type: types.removeToCart,
+        payload: filteredOrder
+    } 
 }

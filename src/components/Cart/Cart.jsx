@@ -6,19 +6,25 @@
 // CartItems comes from the global redux state
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { startRemoveItem } from '../../actions/cart';
 import './cart.css';
 
 const Cart = () => {
 
   const { cart } = useSelector(state => state);
+  const dispatch = useDispatch();
 
-  const handleDeleteItem = () => {
-    console.log("Click para eliminar ticket");
+  const handleDeleteItem = (e) => {
+    
+    const itemId = parseInt(e.target.id);
+
+    dispatch(startRemoveItem( cart.event, itemId ));
   }
 
-  if (cart.event === undefined) {
+  if (cart.event === undefined || cart.event.length === 0) {
     return (
       <div className="container cart-section">
         <h1>
@@ -37,7 +43,7 @@ const Cart = () => {
       {
         cart.event.map(e => {
           return (
-            <div key={e.id} id={e.id} className="container card mb-5 p-0">
+            <div key={e.id} className="container card mb-5 p-0">
               <div className="row g-0">
                 <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
                   <img src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1/media/events/ticket_latam_owsqvf" alt="..." />
@@ -52,9 +58,7 @@ const Cart = () => {
                         <p className="text-muted">{e.date_event}</p>
                       </div>
                       <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-center">
-                        <button className="btn btn-primary" onClick={handleDeleteItem}>
-                          <i className="fas fa-times"></i>
-                        </button>
+                        <button className="btn btn-primary fas fa-times" id={e.id} onClick={handleDeleteItem}></button>
                       </div>
                     </div>
                   </div>

@@ -16,5 +16,6 @@ export const types = {
     getEvents: "[Evnts] Get Events",
 
     /* Cart types */
-    addToCart: "[Cart] Add to cart"
+    addToCart: "[Cart] Add to cart",
+    removeToCart: "[Cart] Remove to cart"
 }

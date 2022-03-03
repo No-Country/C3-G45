@@ -1,3 +1,7 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import './cart.css';
 // This is a functional component wrapping the Cart functionality
 // It consists of a Cart component and a CartItem component
 // The Cart component is responsible for rendering the CartItem component

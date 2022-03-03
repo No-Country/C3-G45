@@ -9,7 +9,7 @@
 }
 
 .card-container {
-  border          : solid 1px gray;
+  border          : solid 1px #A737FA;
   border-radius   : 5px;
   padding         : 0;
   display         : flex;

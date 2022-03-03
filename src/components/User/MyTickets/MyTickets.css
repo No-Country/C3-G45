@@ -11,8 +11,19 @@
   background-size: cover;
 }
 .text-intro{
-  font-size: 20px;
-  
+  font-size: 26px;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 4rem 2rem;
+  color: #686AF1;
+}
+
+.fa-angle-right {
+  color: #686AF1;
+  font-size: 26px;
+}
+
+.fa-angle-right:hover {
+  color: #7622f0;
 }
 .text-presentation{
   color: #E922FF;
@@ -28,6 +39,10 @@
   
   position: sticky;
   top: 10rem;
+}
+.tickets-user{
+  max-width: 690px;
+
 }
 @media (max-width: 576px) {
   .text-presentation{

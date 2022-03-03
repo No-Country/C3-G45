@@ -8,8 +8,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { startRemoveItem } from '../../actions/cart';
+import { Link, useNavigate } from 'react-router-dom';
+import { startClearCart, startRemoveItem } from '../../actions/cart';
 import './cart.css';
 
 const Cart = () => {
@@ -17,11 +17,20 @@ const Cart = () => {
   const { cart } = useSelector(state => state);
   const dispatch = useDispatch();
 
+  const finishBuy = () => {
+    alert("Successful purchase");
+    handleClearCart();
+  }
+
+  const handleClearCart = () => {
+    dispatch(startClearCart())
+  }
+
   const handleDeleteItem = (e) => {
-    
+
     const itemId = parseInt(e.target.id);
 
-    dispatch(startRemoveItem( cart.event, itemId ));
+    dispatch(startRemoveItem(cart.event, itemId));
   }
 
   if (cart.event === undefined || cart.event.length === 0) {
@@ -52,10 +61,20 @@ const Cart = () => {
                   <div className="container">
                     <div className="row">
                       <div className="col-xs-12 col-md-6 p-2 body-ticket">
-                        <h3>{e.name_event}</h3>
-                        <p>{e.city}</p>
-                        <p>{e.location}</p>
-                        <p className="text-muted">{e.date_event}</p>
+                        <h3>{e. name_event}</h3>
+                        <p>
+                          <i className="fas fa-globe-americas"></i> {e.city}
+                        </p>
+                        <p>
+                          <i className="fas fa-map-marker-alt"></i> {e.location}
+                        </p>
+                        <p className="text-muted">
+                          <i className="fas fa-calendar-alt"></i> {e.date_event}
+                        </p>
+                        <p>
+                          <i className="fas fa-dollar-sign"></i> Price: USD150
+                        </p>
+                        
                       </div>
                       <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-center">
                         <button className="btn btn-primary fas fa-times" id={e.id} onClick={handleDeleteItem}></button>
@@ -68,6 +87,19 @@ const Cart = () => {
           )
         })
       }
+      <div className="container">
+        <div className="row mb-5">
+          <div className="col-md-8">
+            <p>TOTAL: USD150</p>
+          </div>
+          <div className="col-md-2">
+            <button className=" btn btn-primary" onClick={ finishBuy }>Buy</button>
+          </div>
+          <div className="col-md-2">
+            <button className=" btn btn-primary" onClick={ handleClearCart }>Clear cart</button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

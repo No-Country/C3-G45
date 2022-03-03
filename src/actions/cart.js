@@ -31,3 +31,17 @@ const removeToCart = ( filteredOrder ) => {
         payload: filteredOrder
     } 
 }
+
+/* Clear cart */
+export const startClearCart = () => {
+    return(dispatch) => {
+        dispatch(clearCart())
+    }
+}
+
+const clearCart = () => {
+    return {
+        type: types.clearCart,
+        payload: []
+    }
+}

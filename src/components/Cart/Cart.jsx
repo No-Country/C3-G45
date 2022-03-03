@@ -5,7 +5,7 @@ import './cart.css';
 
 const Cart = () => {
 
-  const { cart } = useSelector(state => state)
+  const { cart } = useSelector(state => state);
 
   const handleDeleteItem = () => {
     console.log("Click para eliminar ticket");

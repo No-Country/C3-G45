@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
-import MyTicketCard from "../User/components/MyTicketsCard/MyTicketsCard";
 import "./styles.css";
 
 // Example items, to simulate fetching from another resources.
 
-function Items({ currentItems }) {
+function Items({ currentItems, componentCreator }) {
   return (
-    <>
-      {currentItems && currentItems.map((item) => <MyTicketCard item={item} />)}
-    </>
+    <>{currentItems && currentItems.map((item) => componentCreator(item))}</>
   );
 }
 
-function Pagination({ itemsPerPage, items }) {
+function Pagination({ itemsPerPage, items, component }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
@@ -27,7 +24,7 @@ function Pagination({ itemsPerPage, items }) {
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage]);
+  }, [itemOffset, itemsPerPage]); // eslint-disable-line
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
@@ -38,18 +35,23 @@ function Pagination({ itemsPerPage, items }) {
     setItemOffset(newOffset);
   };
 
+  // We need to bind the component we received by prop with Items:
+  const componentWithItems = (item) => React.cloneElement(component, { item });
   return (
     <>
-      <Items currentItems={currentItems} items={Items} />
+      <Items
+        currentItems={currentItems}
+        componentCreator={componentWithItems}
+      />
       <div className="containerPagination">
         <ReactPaginate
           breakLabel="..."
           nextLabel="next >"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
           pageCount={pageCount}
+          pageRangeDisplayed={5}
           previousLabel="< previous"
           renderOnZeroPageCount={null}
+          onPageChange={handlePageClick}
         />
       </div>
     </>

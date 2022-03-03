@@ -1,5 +1,7 @@
 import React from "react";
 import Pagination from "../../Pagination/Pagination";
+import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
+import MyTicketsCard2 from "../components/MyTicketsCard2/MyTicketsCard2";
 
 const items = [
   {
@@ -105,17 +107,23 @@ const MyTickets = () => {
           <div className="contianer-fluid bg-my-tickets">
             Hi, {/* Hi, {state.auth.name} */}
           </div>
+
+          <button></button>
         </div>
         <div className="row">
           <div className="col-12 text-center">
             <h1 className="profile-h1">My Tickets</h1>
           </div>
           <div className="row">
-            <div className="col-12 text-center">
-              <div>
+            <div className="col-12">
+              <div className="text-center">
                 <h2>Upcoming Events</h2>
+                <Pagination
+                  component={<MyTicketsCard2 />}
+                  itemsPerPage={2}
+                  items={items}
+                />
               </div>
-              <Pagination itemsPerPage={2} items={items} />
             </div>
           </div>
           <div className="col-12 card-container">

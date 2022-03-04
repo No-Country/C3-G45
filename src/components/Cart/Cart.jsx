@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { startRemoveItem } from '../../actions/cart';
 import './cart.css';
 // This is a functional component wrapping the Cart functionality
 // It consists of a Cart component and a CartItem component
@@ -9,12 +11,7 @@ import './cart.css';
 // We need to map the cartItems state to the CartItem component
 // CartItems comes from the global redux state
 
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { startRemoveItem } from '../../actions/cart';
-import './cart.css';
+
 
 const Cart = () => {
 
@@ -22,10 +19,10 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const handleDeleteItem = (e) => {
-    
+
     const itemId = parseInt(e.target.id);
 
-    dispatch(startRemoveItem( cart.event, itemId ));
+    dispatch(startRemoveItem(cart.event, itemId));
   }
 
   if (cart.event === undefined || cart.event.length === 0) {

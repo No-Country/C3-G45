@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Dualipa Events
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Here you'll find the latest tickets, products and memorabilia of her shows:
 
-## Available Scripts
+![](./images/frontend.jpg)
 
-In the project directory, you can run:
+---
+## How to login to the backend admin panel
+![](./images/backend-admin.jpg)
+## What can you do with it:
+![](./images/backend-dashboard.jpg)
+## What do you get in return:
+![](./images/backend-API-rest.jpg)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech stack:
+### Frontend:
+* HTML 5 for document structure
+* CSS 3 - Bootstrap 5 for styling
+* Javascript ES6+ - React 17 & Redux 4.1 (SPA)
+* NodeJs & npm/yarn for the development environment
+### Backend:
+* Python 3.9 - Django 3.2 (django-rest-framework 3.13)
+* Postgresql for the database
+## Hosting:
+* Heroku for deployment itself
+* Cloudinary for image storage
+## Project management:
+* Scrum as agile methodology
+* Trello for project management
+* Git and Github for version control
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+## Contributors:
 
-### `npm test`
+* Gordon Mario - Backend
+* Muñoz Gonzalo - Fullstack
+* Rojas Massey Luca - Frontend
+* Scalzo Bryan - Frontend
+* Vargas Eva - Frontend and team coordinator
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## Where can you find us?
+### [Backend server](https://no-country-c03-g57-backend.herokuapp.com/api/v1/product-list)
+### [Working website](http://no-country-c03-g57-frontend.herokuapp.com/)
+---
+## Getting started with the project:
+You're going to need to do a couple of things in order to run this project on your local machine:
 
-### `npm run build`
+1) Clone both backend and frontend servers:
+```sh
+git clone https://github.com/No-Country/C3-G45-backend.git
+git clone https://github.com/No-Country/C3-G45.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2) Install dependencies:
+```sh
+# For backend
+cd C3-G45-backend
+pip install -r requirements.txt
+```
+```sh
+# For frontend
+cd C3-G45
+npm install # or yarn install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3) Run the backend server:
+```sh
+python3 manage.py makemigrations  # Create migrations
+python3 manage.py migrate         # Apply migrations
+python3 manage.py createsuperuser # Pick whatever user and password you want
+python3 manage.py runserver       # This is a development server
+```
+4) Run the frontend server:
+```sh
+npm start # or yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5) Open the frontend in your browser:
+```sh
+http://localhost:3000
+```
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+## Acknoledgements:
+* The whole No Country staff
+* A bunch of other people I will mention later :)

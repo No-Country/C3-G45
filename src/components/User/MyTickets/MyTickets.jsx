@@ -41,7 +41,7 @@ const items = [
     id: 2,
     name_event: "New Album",
     description: "ANother event for New Album",
-    status_event: "DISPONIBLE",
+    status_event: "AVAILABLE",
     get_image: "",
     get_thumbnail: "",
     date_event: "2022-02-25T17:52:42Z",
@@ -91,7 +91,7 @@ const items = [
       },
       {
         id: 3,
-        name_product: "guitarra",
+        name_product: "Guitar",
         get_absolute_url: "/futuro-event-2022/guitarra-fw/",
         description: "The classic guitarra from the band",
         price: "500.00",

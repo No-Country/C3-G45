@@ -36,7 +36,7 @@ const TicketsCards = () => {
     if(data.events === undefined){
         return (
             <div>
-                CARGANDO....
+                Loading....
             </div>
         )
     }

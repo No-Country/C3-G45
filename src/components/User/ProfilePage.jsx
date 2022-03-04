@@ -18,7 +18,7 @@ const ProfilePage = () => {
     <div className="container profile-container">
       <div className="row">
         <div className="col-12 text-center">
-          <h1 className="profile-h1">My Profile</h1>
+          <h1 className="profile-h1">My Account</h1>
         </div>
 
         <div className="col-12 text-center">

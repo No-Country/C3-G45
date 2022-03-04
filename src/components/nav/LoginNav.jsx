@@ -17,7 +17,7 @@ const LoginNav = () => {
     <ul className="navbar-nav">
       <li className="nav-item">
         <Link className="nav-link" id="profile" to="/profile">
-          My Profile
+          My Account
         </Link>
       </li>
       <li className="nav-item">

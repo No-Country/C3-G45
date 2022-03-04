@@ -2,8 +2,7 @@ import React from "react";
 import Pagination from "../../Pagination/Pagination";
 import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
 import MyProductsCard from './../components/MyProductsCard/MyProductsCard';
-import Stars from "../../DecorativeStars/Stars";
-import './styles.css'
+// import Stars from "../../DecorativeStars/Stars";
 
 const items = [
   {
@@ -103,24 +102,24 @@ const items = [
 
 const MyPurchases = () => {
   return (
-    <><Stars />
+    <>
+      {/* <Stars /> */}
       <div className="container">
-        <div className="row">
-          <div className="col-12 text-center">
-            <h1 className="profile-h1">My Tickets</h1>
-          </div>
-          <div className="container">
-            <div className="text-intro">
-              <h2>Your purchases</h2>
-            </div>
-            <Pagination
-              component={<MyTicketsCard />}
-              itemsPerPage={2}
-              items={items}
-            />
-          </div>
+        <div className="container-fluid text-intro">
+          <h3> <i className="fas fa-angle-right"></i>Check your products</h3>
         </div>
       </div>
+      <div className="container tickets-user">
+        <div className="text-intro">
+          <h2>Your purchases</h2>
+        </div>
+        <Pagination
+          component={<MyProductsCard />}
+          itemsPerPage={2}
+          items={items}
+        />
+      </div>
+
 
     </>
   );

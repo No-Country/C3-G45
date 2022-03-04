@@ -57,7 +57,7 @@ const TicketsCards = () => {
                                                 <div className="container">
                                                     <div className="row">
                                                         <div className="col-xs-12 col-md-6 p-2 body-ticket">
-                                                            <h3>{e. name_event}</h3>
+                                                            <h3>{e.name_event}</h3>
                                                             <p>
                                                                 <i className="fas fa-globe-americas"></i> {e.city}
                                                             </p>

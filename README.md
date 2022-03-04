@@ -33,8 +33,8 @@
 
 ---
 ## Contributors:
-
-* Gordon Mario - Backend
+Team who participated in this project.
+* [Gordon Mario](https://github.com/maegop) - Backend
 * Muñoz Gonzalo - Fullstack
 * Rojas Massey Luca - Frontend
 * Scalzo Bryan - Frontend
@@ -46,7 +46,8 @@
 ### [Working website](http://no-country-c03-g57-frontend.herokuapp.com/)
 ---
 ## Getting started with the project:
-You're going to need to do a couple of things in order to run this project on your local machine:
+The following instructions will get you a copy of the project up and running on your local machine for development purposes. 
+You'll need to do a couple of things in order to run this project on your local machine:
 
 1) Clone both backend and frontend servers:
 ```sh

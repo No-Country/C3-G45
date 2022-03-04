@@ -12,7 +12,12 @@ export const cartReducer = (state = {}, action ) => {
             return {
                 event: action.payload
             }
-            
+        
+        case types.clearCart:
+            return {
+                event: action.payload
+            }
+
         default: 
             return state;
     }

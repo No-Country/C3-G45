@@ -115,6 +115,14 @@
   width: 100%;
 }
 
+.fa-calendar-alt, .fa-map-marker-alt, .fa-globe-americas{
+  color:#7622f0
+}
+
+.fa-calendar-alt:hover, .fa-map-marker-alt:hover, .fa-globe-americas:hover{
+  color:#7622f0
+}
+
 @media (max-width: 576px) {
   .body-ticket {
     justify-content: center;

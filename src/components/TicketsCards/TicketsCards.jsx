@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { startAddToCart } from '../../actions/cart';
+import { isInCart } from '../../helpers/isInCart';
 // import miniature from "../../assets/img/dua-lipa-miniature.jpg";
 
 const TicketsCards = () => {
@@ -25,6 +26,9 @@ const TicketsCards = () => {
         if(auth.session === false || auth.session === undefined){
             navigate("/login");
         }else{
+            if(isInCart(cart.event, node)){
+                return console.log("Wont add existing item to cart");
+            }
             dispatch(startAddToCart( currentCart, node ));
         }
     }
@@ -54,11 +58,17 @@ const TicketsCards = () => {
                                                     <div className="row">
                                                         <div className="col-xs-12 col-md-6 p-2 body-ticket">
                                                             <h3>{e.name_event}</h3>
-                                                            <p>{e.city}</p>
-                                                            <p>{e.location}</p>
-                                                            <p className="text-muted">{e.date_event}</p>
+                                                            <p>
+                                                                <i className="fas fa-globe-americas"></i> {e.city}
+                                                            </p>
+                                                            <p>
+                                                                <i className="fas fa-map-marker-alt"></i> {e.location}
+                                                            </p>
+                                                            <p className="text-muted">
+                                                                <i className="fas fa-calendar-alt"></i> {e.date_event}
+                                                            </p>
                                                         </div>
-                                                        <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-end">
+                                                        <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-center">
                                                             <button className="btn btn-primary" id={e.id} onClick={ handleAddToCart }>
                                                                 Buy ticket
                                                             </button>

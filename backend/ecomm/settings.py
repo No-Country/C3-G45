@@ -51,8 +51,15 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS=[
-    "http://localhost:8080"
+    "http://localhost:8080",
+    "https://no-country-c03-g57-frontend.herokuapp.com/"
 ]
+
+CORS_ORIGIN_WHITELIST=(
+    "http://localhost:8080",
+    "https://no-country-c03-g57-frontend.herokuapp.com/"
+
+)
 
 AUTH_USER_MODEL='authentication.User'
 

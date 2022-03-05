@@ -1,0 +1,107 @@
+.bg-my-products {
+    width                : 100%;
+    height               : 100%;
+    min-height           : 500px;
+    /* background-image  : url(../../../assets/img/back-black.png);
+    background-attachment: fixed; */
+    background-position  : center;
+    background-repeat    : no-repeat;
+    background-size      : cover;
+
+}
+
+.container-presentation {
+    display        : flex;
+    flex-wrap      : nowrap;
+    justify-content: space-between;
+    flex-flow      : row;
+}
+
+.fix {
+    position: relative;
+    top     : 6rem;
+    display : inline-block;
+}
+
+.decorative {
+    display: inline-block;
+}
+
+.decorative img {
+    position : relative;
+    top      : 0px;
+    right    : 0px;
+    width    : 100%;
+    min-width: 100px;
+    max-width: 380px;
+}
+
+
+/*Decorative bokeh background*/
+$particleSize     : 20vmin;
+$animationDuration: 6s;
+$amount           : 20;
+
+.background {
+    position: relative;
+    overflow: hidden;
+}
+
+.background span {
+    width                    : $particleSize;
+    height                   : $particleSize;
+    border-radius            : $particleSize;
+    backface-visibility      : hidden;
+    position                 : absolute;
+    animation-name           : move;
+    animation-duration       : $animationDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    $colors                  : (#583C87,
+            #E45A84,
+            #FFACAC);
+
+    @for $i from 1 through $amount {
+        &:nth-child(#{$i}) {
+            color             : nth($colors, random(length($colors)));
+            top               : random(100) * 1%;
+            left              : random(100) * 1%;
+            animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+            animation-delay   : random(($animationDuration + 10s) * 10) / 10 * -1s;
+            transform-origin  : (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+            $blurRadius       : (random() + 0.5) * $particleSize * 0.5;
+            $x                : if(random() > 0.5, -1, 1);
+            box-shadow        : ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+        }
+    }
+}
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+@media (max-width: 576px) {
+    .fix{
+        padding: 2rem !important;
+    }
+    .decorative{
+        display: none;
+    }
+  }
+
+@media (max-width: 321px) {
+    .fix{
+        padding: 2rem !important;
+        top: auto;
+    }
+    .decorative{
+        display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .video-bg {
+      height: 27.5rem !important;
+    }
+  }

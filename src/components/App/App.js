@@ -7,16 +7,18 @@ import Navbar from '../nav/Navbar';
 import LastEventsModal from '../modals/LastEventsModal';
 import NewEvents from '../modals/NewEvents';
 import AppRouter from '../../Router/AppRouter';
+//import Stars from '../DecorativeStars/Stars';
 
 import './App.css';
 
 function App() {
-  
+
   return (
-    
-    <Provider store={ store }>
+
+    <Provider store={store}>
       <BrowserRouter>
         <div className="App">
+          {/* <Stars /> */}
           <Navbar />
           <AppRouter />
           <LastEventsModal />

@@ -1,14 +1,45 @@
 import { React } from 'react';
-import './stars.scss'
+import './stars.css'
 
 
 
 const Stars = () => {
     return (
         <>
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+            <div className='container-stars'>
+            <div className="snowflakes">
+                <div className="snowflake">
+                    ❅
+                </div>
+                <div className="snowflake">
+                    ❅
+                </div>
+                <div className="snowflake">
+                    ❆
+                </div>
+                <div className="snowflake">
+                    ❄
+                </div>
+                <div className="snowflake">
+                    ❅
+                </div>
+                <div className="snowflake">
+                    ❆
+                </div>
+                <div className="snowflake">
+                    ❄
+                </div>
+                <div className="snowflake">
+                    ❅
+                </div>
+                <div className="snowflake">
+                    ❆
+                </div>
+                <div className="snowflake">
+                    ❄
+                </div>
+            </div>
+            </div>
         </>
     )
 

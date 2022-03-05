@@ -21,15 +21,23 @@ const MyProductsCard = ({ item }) => {
     //   </div>
     // </div>
     <>
-      <div class="product-card">
-			<div class="product-image">
-				<img src="https://www.downloadclipart.net/medium/purse-png-transparent.png"/>
-			</div>
-			<div class="product-info">
-				<h5>Winter Jacket {item.description}</h5>
-				<h6>$99.99</h6>
-			</div>
-		</div>
+      <div className="product-card holo">
+        <div className="badge">Purchased</div>
+        <div className="product-tumb">
+          <img src="https://i.imgur.com/xdbHo4E.png" alt="product" />
+        </div>
+        <div className="product-details">
+          <span className="product-catagory">Women,bag</span>
+          <h4><p href="#">Women leather bag</p></h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+          <div className="product-bottom-details">
+            <div className="product-price"><small>$96.00</small>$230.99</div>
+            <div className="product-links">
+              <a href="#">Add to cart <i className="fa fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
 
   );

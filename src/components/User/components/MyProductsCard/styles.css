@@ -1,40 +1,149 @@
+.product-card * {
+	-webkit-box-sizing: border-box;
+	box-sizing        : border-box;
+	margin            : 0;
+	padding           : 0;
+}
+
+a {
+	text-decoration: none;
+}
+
 .product-card {
-	display: flex;
-	flex-direction: column;
-	padding: 2%;
-	flex: 1 10%;
-	
-	background-color: #FFF;
-	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
+	width        : 100%;
+	position     : relative;
+	box-shadow   : 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+	border-radius: 10px;
+	margin       : 0 0 2rem 0;
 }
 
-.product-image img {
-	width: 10%;
+.badge {
+	position        : absolute;
+	top             : 0px;
+	right           : 0px;
+	background-color: rgba(118, 34, 240, 0.6);
+	min-width       : 80px;
+	text-transform  : uppercase;
+	letter-spacing  : 2px;
+	padding         : 0.5rem 1rem;
+	font-family     : "Bebas Neue", cursive;
+	box-shadow      : 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+	border-radius   : 10px 0px;
+	font-size       : 1.3rem;
 }
 
-.product-info {
-	margin-top: auto;
+.product-tumb {
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	height         : 260px;
+	padding        : 1rem;
+	background     : #7422f0ea;
+}
+
+.product-tumb img {
+	max-width : 100%;
+	max-height: 100%;
+}
+
+.product-details {
+	padding      : 1rem 2rem;
+	background   : #18151ff8;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.product-catagory {
+	display       : block;
+	font-size     : 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color         : #e0bdfa;
+	margin-bottom : 18px;
+	font-family   : "Bebas Neue", cursive;
+}
+
+.product-details h4 p {
+	font-weight    : 500;
+	display        : block;
+	margin-bottom  : 18px;
+	text-transform : uppercase;
+	color          : #686AF1;
+	text-decoration: none;
+	transition     : 0.3s;
+}
+
+.product-details h4 p:hover {
+	color: #7622F0;
+}
+
+.product-details p {
+	font-size    : 18px;
+	line-height  : 22px;
+	margin-bottom: 18px;
+	color        : #e0bdfa;
+	font-family  : "Josefin Sans", sans-serif;
+}
+
+.product-bottom-details {
+	overflow   : hidden;
+	border-top : 1px solid #eee;
 	padding-top: 20px;
-	text-align: center;
-    color: #04020F;
-}
-@media ( max-width: 920px ) {
-	
-	.product-card {
-		flex: 1 21%;
-	}
-	
-	.products .product-card:first-child, 
-	.products .product-card:nth-child(2) {
-		flex: 2 46%;
-	}
-	
 }
 
-@media ( max-width: 600px ) {
-	
-	.product-card {
-		flex: 1 46%;
+.product-bottom-details div {
+	float: left;
+	width: 50%;
+}
+
+.product-price {
+	font-size  : 18px;
+	color      : #686AF1;
+	font-weight: 600;
+}
+
+.product-price small {
+	font-size      : 80%;
+	font-weight    : 400;
+	text-decoration: line-through;
+	display        : inline-block;
+	margin-right   : 5px;
+}
+
+.product-links {
+	text-align: right;
+}
+
+.product-links a {
+	display    : inline-block;
+	margin-left: 5px;
+	color      : #e1e1e1;
+	transition : 0.3s;
+	font-size  : 17px;
+}
+
+.product-links a:hover {
+	color: #7622F0;
+}
+
+.holo {
+	background-image         : url(../../../../assets/img/holo.webp);
+	background-clip          : border-box;
+	-webkit-background-clip  : border-box;
+	animation-duration       : 6s;
+	animation-iteration-count: infinite;
+	animation-direction      : alternate;
+	animation-timing-function: linear;
+	animation-name           : fluid;
+	background-size          : 500%;
+	border-radius            : 10px;
+}
+
+@keyframes fluid {
+	from {
+		background-position: top;
 	}
-	
+
+	to {
+		background-position: bottom;
+	}
 }

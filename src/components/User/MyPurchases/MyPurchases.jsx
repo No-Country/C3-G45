@@ -1,9 +1,8 @@
 import React from "react";
 import Pagination from "../../Pagination/Pagination";
-import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
 import MyProductsCard from './../components/MyProductsCard/MyProductsCard';
-// import Stars from "../../DecorativeStars/Stars";
-
+import './MyPurchases.scss'
+import moon from '../../../assets/img/moon-crop.png'
 const items = [
   {
     id: 3,
@@ -103,8 +102,41 @@ const items = [
 const MyPurchases = () => {
   return (
     <>
-      {/* <Stars /> */}
-      <div className="container">
+      <div className="container-fluid cont-tickets">
+        <div className="container-fluid">
+          <div className=" bg-my-products background">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div className="container-presentation">
+              <p className="fix text-presentation">
+                Get up to date <br></br>
+                on the latest trends
+              </p>
+              <div className="decorative">
+                <img src={moon} alt="decorative-moon" />
+              </div>
+
+            </div>
+          </div>
+        </div>
         <div className="container-fluid text-intro">
           <h3> <i className="fas fa-angle-right"></i>Check your products</h3>
         </div>

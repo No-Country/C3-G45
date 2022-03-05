@@ -28,7 +28,7 @@ const MyTicketsCard2 = ({ item }) => {
           <img
             className="postcard__img"
             src="https://dynamicmedia.livenationinternational.com/Media/d/q/t/e7e378ed-7f05-4c67-8f44-b08c8aa72ca9.jpg"
-            alt="Image Title"
+            alt="Title"
           />
         </a>
         <div className="postcard__text">
@@ -38,14 +38,14 @@ const MyTicketsCard2 = ({ item }) => {
           <h1 className="postcard__title blue"><a href="#">{item.name_event}</a>
           </h1>
           <div className="postcard__subtitle small">
-            <time datetime="2020-05-25 12:00:00">
+            <time dateTime="2020-05-25 12:00:00">
               <i className="fas fa-calendar-alt"></i>{stringToDate(item.date_event)}
             </time>
             <div>
               <i className="fas fa-clock"></i>{stringToTime(item.date_event)}
             </div>
             <div>
-              <i className="fas fa-map-marker"></i>{item.city} - {item.location} 
+              <i className="fas fa-map-marker"></i>{item.city} - {item.location}
             </div>
           </div>
           <div className="postcard__bar"></div>

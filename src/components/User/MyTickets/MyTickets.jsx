@@ -13,7 +13,7 @@ const items = [
     get_thumbnail:
       "https://no-country-c03-g57-backend.herokuapp.com/media/events/ticket_latam.jpeg",
     date_event: "2022-02-28T18:12:50Z",
-    city:"Ciudad Autonoma de Buenos Aires",
+    city: "Ciudad Autonoma de Buenos Aires",
     location: "Estadio SC",
     get_absolute_url: "/tour-latam-2022/santiago-concert-santiago/",
     products: [],
@@ -119,20 +119,18 @@ const MyTickets = () => {
   return (
     <>
       <div className="container-fluid cont-tickets">
-        <div >
-          <div className="container-fluid">
-            <div className="bg-my-tickets">
-              <div className="sticky">
-                <p className="text-presentation">
-                  Welcome, Hugo <br></br>
-                  Are you ready for the Show?
-                </p>
-              </div>
+        <div className="container-fluid">
+          <div className="bg-my-tickets">
+            <div className="sticky">
+              <p className="text-presentation">
+                Welcome, Hugo <br></br>
+                Are you ready for the Show?
+              </p>
             </div>
           </div>
-          <div className="container-fluid text-intro">
-            <h3> <i className="fas fa-angle-right"></i>Check the latest Tickets</h3>
-          </div>
+        </div>
+        <div className="container-fluid text-intro">
+          <h3> <i className="fas fa-angle-right"></i>Check the latest Tickets</h3>
         </div>
       </div>
       <div className="container tickets-user" >

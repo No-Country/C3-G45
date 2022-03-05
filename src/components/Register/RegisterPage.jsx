@@ -8,6 +8,7 @@ import { useForm } from '../../hooks/useForm';
 import './register.css';
 import { useSelector } from 'react-redux';
 import { useIsFormValid } from '../../validation/useIsFormValid';
+import { postItem } from '../../helpers/crudFunctions';
 
 const RegisterPage = () => {
 
@@ -29,6 +30,7 @@ const RegisterPage = () => {
 
         if (isFormValidRegister(firstName, lastName, userName, email, password)) {
             dispatch(startRegister(uid, firstName, lastName, userName, email, password));
+            postItem(userName, firstName, email, password);
             dispatch(startLoginEmailPass(uid, email, password));
 
             navigate("/home");

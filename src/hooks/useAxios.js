@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { startGetEvents } from '../actions/events';
-import getItem from '../helpers/getItem';
+import { getItem } from '../helpers/crudFunctions';
 
-const useAxios = () => {
+const useAxiosGet = () => {
 
     const dispatch = useDispatch();
 
@@ -18,4 +18,4 @@ const useAxios = () => {
         })
 }
 
-export default useAxios;
+export default useAxiosGet;

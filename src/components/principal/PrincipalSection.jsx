@@ -5,14 +5,12 @@ import Header from './sections/Header';
 import VideoSection from './sections/VideoSection';
 import MerchandisingSection from './sections/MerchandisingSection';
 import './principalSection.css'
-import useAxios from '../../hooks/useAxios';
-import { useDispatch } from 'react-redux';
-import { startGetEvents } from '../../actions/events';
+import useAxiosGet from '../../hooks/useAxios';
 
 
 const PrincipalSection = () => {
 
-    useAxios();
+    useAxiosGet();
 
     return (
         <>

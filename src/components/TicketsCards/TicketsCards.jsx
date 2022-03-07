@@ -2,10 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { startAddToCart } from "../../actions/cart";
-import { isInCart } from "../../helpers/isInCart";
-import EventCard from "../EventCard/EventCard";
-// import miniature from "../../assets/img/dua-lipa-miniature.jpg";
+import { startAddToCart } from "actions/cart";
+import { isInCart } from "helpers/isInCart";
+import EventCard from "components/EventCard/EventCard";
+// import miniature from "assets/img/dua-lipa-miniature.jpg";
 
 const TicketsCards = () => {
   const { data, auth, cart } = useSelector((state) => state);

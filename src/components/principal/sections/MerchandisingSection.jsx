@@ -1,5 +1,5 @@
 import React from "react";
-import TicketsCards from "../../TicketsCards/TicketsCards";
+import TicketsCards from "components/TicketsCards/TicketsCards";
 
 const MerchandisingSection = () => {
 

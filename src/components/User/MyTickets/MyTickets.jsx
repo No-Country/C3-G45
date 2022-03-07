@@ -1,6 +1,6 @@
 import React from "react";
-import Pagination from "../../Pagination/Pagination";
-import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
+import Pagination from "components/Pagination/Pagination";
+import MyTicketsCard from "components/User/components/MyTicketsCard/MyTicketsCard";
 import "./MyTickets.css";
 const items = [
   {

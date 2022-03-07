@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { startClearCart, startRemoveItem } from "../../actions/cart";
+import { startClearCart, startRemoveItem } from "actions/cart";
 import "./cart.css";
 // This is a functional component wrapping the Cart functionality
 // It consists of a Cart component and a CartItem component
@@ -49,7 +49,7 @@ const Cart = () => {
       {cart.event.map((e) => {
         return (
           <div key={e.id} className="container card mb-5 p-0">
-            <div className="row g-0">
+            {/* <div className="row g-0">
               <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
                 <img
                   src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1/media/events/ticket_latam_owsqvf"
@@ -81,6 +81,20 @@ const Cart = () => {
                         onClick={handleDeleteItem}
                       ></button>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div> */}
+            <div className="card mb-3" style={{ maxWidth: "540px" }}>
+              <div className="row g-0">
+                <div className="col-md-4">
+                  <img src="..." className="img-fluid rounded-start" alt="..." />
+                </div>
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <h5 className="card-title">Card title</h5>
+                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
                   </div>
                 </div>
               </div>

@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { v4 as uuidv4 } from 'uuid';
-import { startRegister } from '../../actions/auth';
-import { useForm } from '../../hooks/useForm';
+import { startRegister } from 'actions/auth';
+import { useForm } from 'hooks/useForm';
 import './register.css';
 import { useSelector } from 'react-redux';
-import { useIsFormValid } from '../../validation/useIsFormValid';
+import { useIsFormValid } from 'validation/useIsFormValid';
 
 const RegisterPage = () => {
 

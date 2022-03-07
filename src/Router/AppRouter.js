@@ -1,13 +1,13 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import LoginPage from "../components/LogIn/LoginPage";
-import ProfilePage from "../components/User/ProfilePage";
-import PrincipalSection from "../components/principal/PrincipalSection";
-import RegisterPage from "../components/Register/RegisterPage";
-import UpdatePassword from './../components/User/UpdatePassword/UpdatePassword';
-import Cart from "../components/Cart/Cart";
-import MyPurchases from './../components/User/MyPurchases/MyPurchases';
-import MyTickets from './../components/User/MyTickets/MyTickets';
+import LoginPage from "components/LogIn/LoginPage";
+import ProfilePage from "components/User/ProfilePage";
+import PrincipalSection from "components/principal/PrincipalSection";
+import RegisterPage from "components/Register/RegisterPage";
+import UpdatePassword from 'components/User/UpdatePassword/UpdatePassword';
+import Cart from "components/Cart/Cart";
+import MyPurchases from 'components/User/MyPurchases/MyPurchases';
+import MyTickets from 'components/User/MyTickets/MyTickets';
 import PrivateRoute from "./PrivateRoute";
 
 

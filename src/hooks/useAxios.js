@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { startGetEvents } from '../actions/events';
-import { getItem } from '../helpers/crudFunctions';
+import { startGetEvents } from 'actions/events';
+import { getItem } from 'helpers/crudFunctions';
 
 const useAxiosGet = () => {
 

@@ -1,8 +1,8 @@
 import React from "react";
-import Pagination from "../../Pagination/Pagination";
-import MyProductsCard from './../components/MyProductsCard/MyProductsCard';
+import Pagination from "components/Pagination/Pagination";
+import MyProductsCard from "components/User/components/MyProductsCard/MyProductsCard";
 import './MyPurchases.scss'
-import moon from '../../../assets/img/moon-crop.png'
+import moon from 'assets/img/moon-crop.png'
 const items = [
   {
     id: 3,

@@ -26,22 +26,29 @@ const getItem = async () => {
     return item;
 }
 
-const postItem = async (username, first_name, email, pass) => {
+const signupUser = async (username, first_name, email, password) => {
 
-    const url = `https://no-country-c03-g57-backend.herokuapp.com/api/v1/users`;
+    const url = `https://no-country-c03-g57-backend.herokuapp.com/api/v1/users/`;
     await axios.post(url, {
         "username": username,
         "first_name": first_name,
         "email": email,
-        "password": pass
-    }).then( () => {
-        console.log("User send successfully")
-    }).catch( () => {
-        console.log("Error in post user")
+        "password": password
     })
+}
+
+const signinUser = async ( email, password ) => {
+    const url = "https://no-country-c03-g57-backend.herokuapp.com/auth/jwt/create";
+    const { data } = await axios.post(url, {
+        "email": email,
+        "password": password
+    })
+
+    return data;
 }
 
 export {
     getItem,
-    postItem
+    signupUser,
+    signinUser
 }

@@ -3,12 +3,11 @@ import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { v4 as uuidv4 } from 'uuid';
-import { startLoginEmailPass, startRegister } from '../../actions/auth';
+import { startRegister } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import './register.css';
 import { useSelector } from 'react-redux';
 import { useIsFormValid } from '../../validation/useIsFormValid';
-import { postItem } from '../../helpers/crudFunctions';
 
 const RegisterPage = () => {
 
@@ -22,18 +21,14 @@ const RegisterPage = () => {
         uid: uuidv4()
     });
 
-    const { uid, firstName, lastName, userName, email, password } = formValues;
+    const { firstName, lastName, userName, email, password } = formValues;
 
 
     const handleRegister = (e) => {
         e.preventDefault();
 
         if (isFormValidRegister(firstName, lastName, userName, email, password)) {
-            dispatch(startRegister(uid, firstName, lastName, userName, email, password));
-            postItem(userName, firstName, email, password);
-            dispatch(startLoginEmailPass(uid, email, password));
-
-            navigate("/home");
+            dispatch(startRegister(firstName, userName, email, password, navigate));
         }
     }
 

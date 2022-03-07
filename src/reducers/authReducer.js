@@ -4,7 +4,7 @@ export const authReducer = (state = { }, action) => {
   switch (action.type) {
     case types.login:
       return {
-        uid: action.payload.uid,
+        accessToken: action.payload.accessToken,
         name: action.payload.displayName,
         password: action.payload.password,
         session: true,

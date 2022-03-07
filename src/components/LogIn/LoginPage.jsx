@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { v4 as uuidv4 } from 'uuid';
 import { useForm } from '../../hooks/useForm';
@@ -9,11 +9,14 @@ import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
 import '../Register/register.css';
 import './LogIn.css';
 import { useIsFormValid } from '../../validation/useIsFormValid';
+import { signinUser } from '../../helpers/crudFunctions';
 
 const LoginPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    let accessToken = "";
+    const { ui } = useSelector(state => state);
 
     const { isFormValidLogin } = useIsFormValid();
 
@@ -21,7 +24,7 @@ const LoginPage = () => {
         uid: uuidv4(),
     });
 
-    const { uid, email, password } = formValues;
+    const { email, password } = formValues;
 
     const handleGoogleLogin = () => {
         dispatch(startGoogleLogin(navigate));
@@ -30,9 +33,7 @@ const LoginPage = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         if (isFormValidLogin(email, password)) {
-            dispatch(startLoginEmailPass(uid, email, password));
-
-            navigate('/home');
+            dispatch(startLoginEmailPass(email, password, navigate));
         }
     }
     return (
@@ -43,6 +44,15 @@ const LoginPage = () => {
                         <div className="mb-4">
                             <h2 className=' title-login'>Login with your account</h2>
                         </div>
+                        {
+                            (ui.msgError !== null)
+                                ?
+                                <div className="mb-4 auth__alert-error">
+                                    <strong>{ui.msgError}</strong>
+                                </div>
+                                :
+                                <div></div>
+                        }
                         <div className="mb-4">
                             <input type="email" className="form-control" name="email" placeholder="Email" onChange={handleInputChange} />
                         </div>

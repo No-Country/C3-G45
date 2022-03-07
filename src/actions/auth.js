@@ -1,11 +1,24 @@
 import { auth, googleAuthProvider, signInWithPopup } from '../base/firebase-config';
+import { signinUser, signupUser } from '../helpers/crudFunctions';
 
 import { types } from "../types/types";
+import { setError } from './ui';
 
 /* Login and Google Login actions */
-export const startLoginEmailPass = (uid, email, password) => {
+export const startLoginEmailPass = ( email, password, navigate) => {
     return (dispatch) => {
-        dispatch(login(uid, email, password));
+
+        signinUser( email, password )
+            .then( (data) => {
+                console.log("succefully login!!");
+
+                dispatch(login(data.access, email, password));
+                navigate("/home");
+            })
+            .catch( (err) => {
+                console.log(err)
+                dispatch(setError( "Email/password incorrect!" ));
+            });
     }
 }
 
@@ -24,28 +37,36 @@ export const startGoogleLogin = (navigate) => {
     }
 }
 
-export const login = (uid, displayName, password) => ({
+export const login = ( accessToken, displayName, password) => ({
     type: types.login,
     payload: {
-        uid,
+        accessToken,
         displayName,
         password
     }
 });
 
 /* Register actions */
-export const startRegister = (uid, firstName, lastName, userName, email, password) => {
+export const startRegister = (firstName, userName, email, password, navigate) => {
     return (dispatch) => {
-        dispatch(register(uid, firstName, lastName, userName, email, password));
+        signupUser(userName, firstName, email, password)
+        .then( () => {
+            console.log("User register successfully");
+
+            dispatch(register(firstName, userName, email, password));
+
+            dispatch(startLoginEmailPass(email, password, navigate));
+            
+        }).catch(() => {
+            dispatch(setError( "User with this Email already exists." ));
+        });
     }
 }
 
-export const register = (uid, firstName, lastName, userName, email, password) => ({
+export const register = (firstName, userName, email, password) => ({
     type: types.register,
     payload: {
-        uid,
         firstName,
-        lastName,
         userName,
         email,
         password

@@ -2,6 +2,8 @@ import React from "react";
 import Pagination from "../../Pagination/Pagination";
 import MyTicketsCard from "../components/MyTicketsCard/MyTicketsCard";
 import "./MyTickets.css";
+import { useSelector } from "react-redux";
+
 const items = [
   {
     id: 4,
@@ -116,6 +118,7 @@ const items = [
 ];
 
 const MyTickets = () => {
+  const state = useSelector((state) => state);
   return (
     <>
       <div className="container-fluid cont-tickets">
@@ -123,7 +126,7 @@ const MyTickets = () => {
           <div className="bg-my-tickets">
             <div className="sticky">
               <p className="text-presentation">
-                Welcome, Hugo <br></br>
+                Welcome, {state.auth.name} <br></br>
                 Are you ready for the Show?
               </p>
             </div>

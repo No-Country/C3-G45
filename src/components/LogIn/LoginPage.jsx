@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { v4 as uuidv4 } from 'uuid';
-import { useForm } from '../../hooks/useForm';
-import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
- 
-import '../Register/register.css';
+import { useForm } from 'hooks/useForm';
+import { startGoogleLogin, startLoginEmailPass } from 'actions/auth';
+
+import 'components/Register/register.css';
 import './LogIn.css';
-import { useIsFormValid } from '../../validation/useIsFormValid';
-import { checkInLocalStorage } from '../../helpers/localStorage';
+import { useIsFormValid } from 'validation/useIsFormValid';
+import { signinUser } from 'helpers/crudFunctions';
 
 const LoginPage = () => {
 

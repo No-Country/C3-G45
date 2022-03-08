@@ -1,7 +1,7 @@
-import { auth, googleAuthProvider, signInWithPopup } from '../base/firebase-config';
-import { signinUser, signupUser } from '../helpers/crudFunctions';
+import { auth, googleAuthProvider, signInWithPopup } from 'base/firebase-config';
+import { signinUser, signupUser } from 'helpers/crudFunctions';
 
-import { types } from "../types/types";
+import { types } from "types/types";
 import { setError } from './ui';
 
 /* Login and Google Login actions */

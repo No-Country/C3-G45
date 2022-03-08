@@ -1,53 +1,49 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { startAddToCart } from '../../actions/cart';
-import { isInCart } from '../../helpers/isInCart';
-// import miniature from "../../assets/img/dua-lipa-miniature.jpg";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { startAddToCart } from "actions/cart";
+import { isInCart } from "helpers/isInCart";
+import EventCard from "components/EventCard/EventCard";
+// import miniature from "assets/img/dua-lipa-miniature.jpg";
 
 const TicketsCards = () => {
+  const { data, auth, cart } = useSelector((state) => state);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-    const { data, auth, cart } = useSelector( state => state );
-    const navigate =  useNavigate();
-    const dispatch = useDispatch();
-    
-    const handleAddToCart = ( e ) => {
-        const node = Number(e.target.id);
-        const event = data.events.data.find( event => event.id === node );
-        let currentCart = [];
-        
-        if(cart.event === undefined){
-            currentCart.push(event)
-        }else{
-            currentCart = [...cart.event, event]
-        }
+  const handleAddToCart = (e) => {
+    const node = Number(e.target.id);
+    const event = data.events.data.find((event) => event.id === node);
+    let currentCart = [];
 
-        if(auth.session === false || auth.session === undefined){
-            navigate("/login");
-        }else{
-            if(isInCart(cart.event, node)){
-                return console.log("Wont add existing item to cart");
-            }
-            dispatch(startAddToCart( currentCart, node ));
-        }
+    if (cart.event === undefined) {
+      currentCart.push(event);
+    } else {
+      currentCart = [...cart.event, event];
     }
 
-    if(data.events === undefined){
-        return (
-            <div>
-                Loading....
-            </div>
-        )
+    if (auth.session === false || auth.session === undefined) {
+      navigate("/login");
+    } else {
+      if (isInCart(cart.event, node)) {
+        return console.log("Wont add existing item to cart");
+      }
+      dispatch(startAddToCart(currentCart, node));
     }
-    return (
-        <div className="container container-tickets mt-5">
-            <div className="row">
-                <div className="col">
-                    <div className="row row-cols-1 ">
-                        {
-                            data.events.data.map( e => {
-                                return (
+  };
+
+  if (data.events === undefined) {
+    return <div>Loading....</div>;
+  }
+  return (
+    <div className="container container-tickets mt-5">
+      <div className="row">
+        <div className="col">
+          <div className="row row-cols-1 ">
+            {data.events.data.map((e) => {
+              return <EventCard e={e} handleAddToCart={handleAddToCart} />;
+              /* 
                                     <div key={e.id} className="container card mb-5 p-0">
                                         <div className="row g-0">
                                             <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
@@ -77,15 +73,13 @@ const TicketsCards = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-            </div>
+                                    </div>*/
+            })}
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default TicketsCards;

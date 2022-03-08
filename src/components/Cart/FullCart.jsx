@@ -65,6 +65,7 @@ const FullCart = ({ cart, total, handleDeleteItem, handleClearCart, finishBuy })
         <div className="row mb-5">
           <div className="col-md-8">
             <p>TOTAL: USD150</p>
+            <p>TOTAL: USD {total}</p>
           </div>
           <div className="col-md-2">
             <button className=" btn btn-primary" onClick={finishBuy}>

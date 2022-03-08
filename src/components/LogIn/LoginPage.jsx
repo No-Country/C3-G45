@@ -9,7 +9,6 @@ import { startGoogleLogin, startLoginEmailPass } from 'actions/auth';
 import 'components/Register/register.css';
 import './LogIn.css';
 import { useIsFormValid } from 'validation/useIsFormValid';
-import { signinUser } from 'helpers/crudFunctions';
 
 const LoginPage = () => {
 

@@ -42,7 +42,7 @@ const TicketsCards = () => {
         <div className="col">
           <div className="row row-cols-1 ">
             {data.events.data.map((e) => {
-              return <EventCard e={e} handleAddToCart={handleAddToCart} />;
+              return <EventCard key={ e.id } e={e} handleAddToCart={handleAddToCart} />;
               /* 
                                     <div key={e.id} className="container card mb-5 p-0">
                                         <div className="row g-0">

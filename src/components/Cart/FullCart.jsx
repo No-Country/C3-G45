@@ -1,9 +1,9 @@
 import React from 'react'
 
-const FullCart = ({cart, total, handleDeleteItem, handleClearCart, finishBuy}) => {
+const FullCart = ({ cart, total, handleDeleteItem, handleClearCart, finishBuy }) => {
 
   return (
-   <div className="container cart-section">
+    <div className="container cart-section">
       <h1 className="mb-5 mt-5">Your shop cart</h1>
       {cart?.event?.map((e) => {
         return (
@@ -78,7 +78,7 @@ const FullCart = ({cart, total, handleDeleteItem, handleClearCart, finishBuy}) =
           </div>
         </div>
       </div>
-    </div> 
+    </div>
   )
 }
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EmptyCart = () => {
+    
+    return (
     <div className="container cart-section">
         <h1>
             Ups, the cart is empty <i className="fas fa-frown"></i>
@@ -11,6 +13,7 @@ const EmptyCart = () => {
             Store
         </Link>
     </div>
+    );
 }
 
-module.exports = EmptyCart;
+export default EmptyCart;

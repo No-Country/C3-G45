@@ -26,12 +26,13 @@ const getItem = async () => {
     return item;
 }
 
-const signupUser = async (username, first_name, email, password) => {
+const signupUser = async (username, first_name, last_name, email, password) => {
 
-    const url = `https://no-country-c03-g57-backend.herokuapp.com/api/v1/users/`;
+    const url = `https://no-country-c03-g57-backend.herokuapp.com/auth/signup/`;
     await axios.post(url, {
         "username": username,
         "first_name": first_name,
+        "last_name":last_name,
         "email": email,
         "password": password
     })

@@ -6,7 +6,6 @@ export const authReducer = (state = { }, action) => {
       return {
         accessToken: action.payload.accessToken,
         name: action.payload.displayName,
-        password: action.payload.password,
         session: true,
       };
 

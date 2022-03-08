@@ -15,7 +15,6 @@ const LoginPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let accessToken = "";
     const { ui } = useSelector(state => state);
 
     const { isFormValidLogin } = useIsFormValid();
@@ -29,6 +28,8 @@ const LoginPage = () => {
     const handleGoogleLogin = () => {
         dispatch(startGoogleLogin(navigate));
     }
+
+    //checkInLocalStorage();
 
     const handleLogin = (e) => {
         e.preventDefault();

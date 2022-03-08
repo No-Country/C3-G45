@@ -28,7 +28,7 @@ const RegisterPage = () => {
         e.preventDefault();
 
         if (isFormValidRegister(firstName, lastName, userName, email, password)) {
-            dispatch(startRegister(firstName, userName, email, password, navigate));
+            dispatch(startRegister(firstName, userName, lastName, email, password, navigate));
         }
     }
 

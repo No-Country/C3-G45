@@ -5,17 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { useForm } from '../../hooks/useForm';
 import { startGoogleLogin, startLoginEmailPass } from '../../actions/auth';
-
+ 
 import '../Register/register.css';
 import './LogIn.css';
 import { useIsFormValid } from '../../validation/useIsFormValid';
-import { signinUser } from '../../helpers/crudFunctions';
+import { checkInLocalStorage } from '../../helpers/localStorage';
 
 const LoginPage = () => {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    let accessToken = "";
     const { ui } = useSelector(state => state);
 
     const { isFormValidLogin } = useIsFormValid();
@@ -29,6 +28,8 @@ const LoginPage = () => {
     const handleGoogleLogin = () => {
         dispatch(startGoogleLogin(navigate));
     }
+
+    //checkInLocalStorage();
 
     const handleLogin = (e) => {
         e.preventDefault();

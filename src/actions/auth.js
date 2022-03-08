@@ -12,11 +12,10 @@ export const startLoginEmailPass = ( email, password, navigate) => {
             .then( (data) => {
                 console.log("succefully login!!");
 
-                dispatch(login(data.access, email, password));
+                dispatch(login(data.access, email));
                 navigate("/home");
             })
-            .catch( (err) => {
-                console.log(err)
+            .catch( () => {
                 dispatch(setError( "Email/password incorrect!" ));
             });
     }
@@ -37,23 +36,22 @@ export const startGoogleLogin = (navigate) => {
     }
 }
 
-export const login = ( accessToken, displayName, password) => ({
+export const login = ( accessToken, displayName ) => ({
     type: types.login,
     payload: {
         accessToken,
         displayName,
-        password
     }
 });
 
 /* Register actions */
-export const startRegister = (firstName, userName, email, password, navigate) => {
+export const startRegister = (firstName, userName, lastName, email, password, navigate) => {
     return (dispatch) => {
-        signupUser(userName, firstName, email, password)
+        signupUser(userName, firstName, lastName, email, password)
         .then( () => {
             console.log("User register successfully");
 
-            dispatch(register(firstName, userName, email, password));
+            dispatch(register(firstName, userName, lastName, email, password));
 
             dispatch(startLoginEmailPass(email, password, navigate));
             

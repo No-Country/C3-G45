@@ -1,4 +1,5 @@
 import { types } from "types/types";
+import {postOrder} from 'helpers/crudFunctions'
 
 export const startAddToCart = ( currentCart ) => {
 
@@ -31,6 +32,20 @@ const removeToCart = ( filteredOrder ) => {
         payload: filteredOrder
     } 
 }
+export const startBuy =(token, cart) =>{
+    console.log(token, cart)
+    return (dispatch) =>{
+        dispatch(buyCart(token, cart))
+    }
+}
+const buyCart = (token, cart) => {
+    console.log(token)
+    return {
+        type: types.buyCart,
+        payload: {token}
+    }
+}
+
 
 /* Clear cart */
 export const startClearCart = () => {

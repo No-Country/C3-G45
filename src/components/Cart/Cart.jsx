@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { startClearCart, startRemoveItem } from "actions/cart";
+import { startClearCart, startRemoveItem, startBuy } from "actions/cart";
 import "./cart.css";
 // This is a functional component wrapping the Cart functionality
 // It consists of a Cart component and a CartItem component
@@ -12,14 +12,20 @@ import "./cart.css";
 // CartItems comes from the global redux state
 
 const Cart = () => {
-  const { cart } = useSelector((state) => state);
+  const { cart, auth } = useSelector((state) => state);
+ //token
   const dispatch = useDispatch();
 
   const finishBuy = () => {
+    handleBuy();
     alert("Successful purchase");
     handleClearCart();
   };
-
+  const handleBuy =() =>{
+    console.log(auth.accessToken)
+    let token = auth.accessToken;
+    dispatch(startBuy(token, cart));
+  }
   const handleClearCart = () => {
     dispatch(startClearCart());
   };

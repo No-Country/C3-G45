@@ -18,5 +18,8 @@ export const types = {
     /* Cart types */
     addToCart: "[Cart] Add to cart",
     removeToCart: "[Cart] Remove to cart",
-    clearCart: "[Cart] Clear cart"
+    clearCart: "[Cart] Clear cart",
+
+    /*Buy types*/
+    buyCart: "[Cart] buy"
 }

@@ -5,7 +5,7 @@ const getItem = async () => {
     const url = `https://no-country-c03-g57-backend.herokuapp.com/api/v1/event-list/`;
     const { data } = await axios.get(url);
 
-    const item = data.map( e => {
+    const item = data.map(e => {
         return {
             city: e.city,
             date_event: e.date_event,
@@ -38,7 +38,7 @@ const signupUser = async (username, first_name, last_name, email, password) => {
     })
 }
 
-const signinUser = async ( email, password ) => {
+const signinUser = async (email, password) => {
     const url = "https://no-country-c03-g57-backend.herokuapp.com/auth/jwt/create";
     const { data } = await axios.post(url, {
         "email": email,
@@ -47,6 +47,23 @@ const signinUser = async ( email, password ) => {
 
     return data;
 }
+const postOrder = async (id_product, q_product, id_ticket, q_ticket, token) => {
+    let config = { headers: { Authorization: `Bearer ${token}` } }
+    //, token header auth
+    let url = "https://no-country-c03-g57-backend.herokuapp.com/api/v1/order-view";
+    const { data } = await axios.post(url, {
+        "id_product": id_product,
+        "q_product": q_product,
+        "id_ticket": id_ticket,
+        "q_ticket": q_ticket
+    }, config)
+    return data;
+}
+const getOrder = async () => {
+    let url = "https://no-country-c03-g57-backend.herokuapp.com/api/v1/user/1/orders/"
+    //para mi usuario, que tiene el id_ user, con el token para auth
+}
+
 
 export {
     getItem,

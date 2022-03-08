@@ -49,10 +49,10 @@ const Cart = () => {
       </div>
     );
   }
-  return (
+  else return (
     <div className="container cart-section">
       <h1 className="mb-5 mt-5">Your shop cart</h1>
-      {cart.event.map((e) => {
+      {cart?.event?.map((e) => {
         return (
           <div key={e.id} className="container card mb-5 p-0">
             {/* <div className="row g-0">

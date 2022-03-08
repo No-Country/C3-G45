@@ -17,15 +17,14 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const finishBuy = () => {
-    handleBuy();
+    dispatch(startBuy(auth.accessToken, cart));
     alert("Successful purchase");
     handleClearCart();
   };
-  const handleBuy =() =>{
-    console.log(auth.accessToken)
-    let token = auth.accessToken;
-    dispatch(startBuy(token, cart));
-  }
+  // const handleBuy =() =>{
+  //   console.log(auth.accessToken)
+  //   let token = auth.accessToken;
+  // }
   const handleClearCart = () => {
     dispatch(startClearCart());
   };
@@ -36,7 +35,8 @@ const Cart = () => {
     dispatch(startRemoveItem(cart.event, itemId));
   };
 
-  if (cart.event === undefined || cart.event.length === 0) {
+  if (cart.event === [] || cart.event.length === 0 ) {
+
     return (
       <div className="container cart-section">
         <h1>
@@ -52,7 +52,8 @@ const Cart = () => {
   return (
     <div className="container cart-section">
       <h1 className="mb-5 mt-5">Your shop cart</h1>
-      {cart.event.map((e) => {
+      {
+    cart.event?.map((e) => {
         return (
           <div key={e.id} className="container card mb-5 p-0">
             {/* <div className="row g-0">

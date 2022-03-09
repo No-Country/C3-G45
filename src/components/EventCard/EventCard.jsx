@@ -40,6 +40,10 @@ const EventCard = ({ e, handleAddToCart }) => {
               <i className="fas fa-map-marker"></i>
               {e.city} - {e.location}
             </div>
+            <div>
+              <i className="fas fa-dollar-sign"></i>
+              Price - USD{e.tickets[0].price}
+            </div>
           </div>
           <div className="postcard__bar"></div>
           <div className="postcard__preview-txt">{e.description}</div>

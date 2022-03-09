@@ -8,9 +8,10 @@ const stringToTime = (string) => {
   return string.slice(11, 16);
 };
 
-const EventCard = ({ key, e, handleAddToCart }) => {
+const EventCard = ({ e, handleAddToCart }) => {
+
   return (
-    <div key={key}>
+    <div>
       <article className="postcard dark blue" >
         <a className="postcard__img_link" href="#">
           <img
@@ -56,7 +57,7 @@ const EventCard = ({ key, e, handleAddToCart }) => {
                 <button className="btn btn-primary">
                   <i className="fas fa-gift"></i>Products
                 </button>
-  </li>*/}
+              </li>*/}
           </ul>
         </div>
       </article>

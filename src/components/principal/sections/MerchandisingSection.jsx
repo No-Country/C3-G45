@@ -32,8 +32,8 @@ const MerchandisingSection = () => {
       <div className="row">
         <div className="col">
           <div className="btn-toolbar mt-4" role="group" aria-label="Events">
-            <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#lastEvents">
-              Last Events!
+            <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#newProducts">
+              New Products!
             </button>
             <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#newEvents">
               New Events!

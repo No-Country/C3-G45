@@ -68,5 +68,7 @@ const getOrder = async () => {
 export {
     getItem,
     signupUser,
-    signinUser
+    signinUser,
+    postOrder, 
+    getOrder
 }

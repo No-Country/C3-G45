@@ -36,13 +36,22 @@ export const startBuy =(token, cart) =>{
     console.log(token, cart)
     return (dispatch) =>{
         dispatch(buyCart(token, cart))
+        // cart.map(item => {
+        //     postOrder(item.id)
+        //         .then(() => {
+                    
+        //         })
+        // })
     }
 }
 const buyCart = (token, cart) => {
-    console.log(token)
+    console.log(token, cart)
     return {
         type: types.buyCart,
-        payload: {token}
+        payload: {
+            token,
+            cart
+        }
     }
 }
 

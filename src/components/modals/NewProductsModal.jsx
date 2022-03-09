@@ -3,20 +3,20 @@ import TicketsCards from "components/TicketsCards/TicketsCards";
 
 import "./modals.css";
 
-const LastEventsModal = () => {
+const NewProductsModal = () => {
   return (
     <div
       className="modal fade"
-      id="lastEvents"
+      id="newProducts"
       tabIndex="-1"
-      aria-labelledby="lastEventsLabel"
+      aria-labelledby="newProductsLabel"
       aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-scrollable">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title" id="lastEventsLabel">
-              Last Events
+            <h5 className="modal-title" id="newProductsLabel">
+              New Products
             </h5>
             <button
               type="button"
@@ -34,4 +34,4 @@ const LastEventsModal = () => {
   );
 };
 
-export default LastEventsModal;
+export default NewProductsModal;

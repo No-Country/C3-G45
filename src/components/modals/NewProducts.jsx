@@ -3,7 +3,7 @@ import TicketsCards from "components/TicketsCards/TicketsCards";
 
 import "./modals.css";
 
-const NewProductsModal = () => {
+const NewProducts = () => {
   return (
     <div
       className="modal fade"
@@ -34,4 +34,4 @@ const NewProductsModal = () => {
   );
 };
 
-export default NewProductsModal;
+export default NewProducts;

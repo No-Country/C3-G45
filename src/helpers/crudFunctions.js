@@ -47,8 +47,20 @@ const signinUser = async (email, password) => {
 
     return data;
 }
-const postOrder = async (id_product, q_product, id_ticket, q_ticket, token) => {
+const postOrder = async (id_product, q_product, id_ticket, q_ticket, token/*, cart*/) => {
     let config = { headers: { Authorization: `Bearer ${token}` } }
+    //const orderData = {}
+    /*
+        cart.map(item => {
+            return orderData = {
+                "id_product": null,
+                "q_product": null,
+                "id_ticket": cart.id,
+                "q_ticket": cart.ticketQuantity
+            }
+        })
+    */
+
     //, token header auth
     let url = "https://no-country-c03-g57-backend.herokuapp.com/api/v1/order-view";
     const { data } = await axios.post(url, {

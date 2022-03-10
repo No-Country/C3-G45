@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from 'store/store';
 import Footer from 'components/footer/Footer';
 import Navbar from 'components/nav/Navbar';
-import LastEventsModal from 'components/modals/LastEventsModal';
+import NewProducts from 'components/modals/NewProducts';
 import NewEvents from 'components/modals/NewEvents';
 import AppRouter from 'Router/AppRouter';
 //import Stars from 'components/DecorativeStars/Stars';
@@ -21,7 +21,7 @@ function App() {
           {/* <Stars /> */}
           <Navbar />
           <AppRouter />
-          <LastEventsModal />
+          <NewProducts />
           <NewEvents />
           <Footer />
         </div>

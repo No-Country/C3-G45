@@ -2,7 +2,8 @@ import React from "react";
 import TicketsCards from "components/TicketsCards/TicketsCards";
 
 const MerchandisingSection = () => {
-
+   let showProducts = false;
+   //let showEvents = true;
   return (
     <div className="container mt-5 mb-5 container-tickets">
       <div className="row mt-5">
@@ -32,10 +33,13 @@ const MerchandisingSection = () => {
       <div className="row">
         <div className="col">
           <div className="btn-toolbar mt-4" role="group" aria-label="Events">
-            <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#lastEvents">
-              Last Events!
+            <button type="button" className="btn-merch btn btn-primary btn-lg"
+
+              >
+              New Products!
             </button>
-            <button type="button" className="btn-merch btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#newEvents">
+            <button type="button" className="btn-merch btn btn-primary btn-lg" 
+              >
               New Events!
             </button>
           </div>
@@ -45,7 +49,7 @@ const MerchandisingSection = () => {
         <div className="row">
           <div className="col">
             <div className="row row-cols-1 ">
-              <TicketsCards />
+              {showProducts?<p>Hola</p>: <TicketsCards />}
             </div>
           </div>
         </div>

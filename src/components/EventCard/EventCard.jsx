@@ -9,7 +9,6 @@ const stringToTime = (string) => {
 };
 
 const EventCard = ({ e, handleAddToCart }) => {
-  
   return (
     <div>
       <article className="postcard dark blue" >
@@ -42,7 +41,7 @@ const EventCard = ({ e, handleAddToCart }) => {
             </div>
             <div>
               <i className="fas fa-dollar-sign"></i>
-              Price - USD{e.tickets[0].price}
+              USD {e.tickets[0].price}
             </div>
           </div>
           <div className="postcard__bar"></div>
@@ -54,7 +53,7 @@ const EventCard = ({ e, handleAddToCart }) => {
                 id={e.id}
                 onClick={handleAddToCart}
               >
-                Buy
+                Add to Cart
               </button>
             </li>
             {/*<li className="tag__item">

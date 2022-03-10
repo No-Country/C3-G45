@@ -9,7 +9,7 @@ const stringToTime = (string) => {
 };
 
 const EventCard = ({ e, handleAddToCart }) => {
-
+  
   return (
     <div>
       <article className="postcard dark blue" >

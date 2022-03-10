@@ -2,13 +2,15 @@ import React from 'react'
 
 const FullCart = ({ cart, total, handleDeleteItem, handleClearCart, finishBuy }) => {
 
+  console.log(total)
+
   return (
     <div className="container cart-section">
       <h1 className="mb-5 mt-5">Your shop cart</h1>
       {cart?.event?.map((e) => {
         return (
           <div key={e.id} className="container card mb-5 p-0">
-            {/* <div className="row g-0">
+            <div className="row g-0">
               <div className="col-4 p-2 d-flex alig-items-center justify-content-center body-ticket">
                 <img
                   src="https://res.cloudinary.com/dxjaruq2p/image/upload/v1/media/events/ticket_latam_owsqvf"
@@ -30,10 +32,13 @@ const FullCart = ({ cart, total, handleDeleteItem, handleClearCart, finishBuy })
                         <i className="fas fa-calendar-alt"></i> {e.date_event}
                       </p>
                       <p>
-                        <i className="fas fa-dollar-sign"></i> Price: USD150
+                        <i className="fas fa-dollar-sign"></i> USD{e.tickets[0].price}
                       </p>
                     </div>
-                    <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-center">
+                    <div className="col-xs-12 col-md-3 d-flex justify-content-center align-items-center">
+                      <input type="number" placeholder={1}/>
+                    </div>
+                    <div className="col-xs-12 col-md-3 p-2 d-flex justify-content-center align-items-center">
                       <button
                         className="btn btn-primary fas fa-times"
                         id={e.id}
@@ -43,8 +48,8 @@ const FullCart = ({ cart, total, handleDeleteItem, handleClearCart, finishBuy })
                   </div>
                 </div>
               </div>
-            </div> */}
-            <div className="card mb-3" style={{ maxWidth: "540px" }}>
+            </div>
+            {/* <div className="card mb-3" style={{ maxWidth: "540px" }}>
               <div className="row g-0">
                 <div className="col-md-4">
                   <img src="..." className="img-fluid rounded-start" alt="..." />
@@ -57,14 +62,14 @@ const FullCart = ({ cart, total, handleDeleteItem, handleClearCart, finishBuy })
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         );
       })}
       <div className="container">
         <div className="row mb-5">
           <div className="col-md-8">
-            <p>TOTAL: USD150</p>
+            <p>TOTAL: USD{total.ticketsTotalPrice}</p>
           </div>
           <div className="col-md-2">
             <button className=" btn btn-primary" onClick={finishBuy}>

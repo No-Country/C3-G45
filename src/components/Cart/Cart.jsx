@@ -31,10 +31,24 @@ const Cart = () => {
     dispatch(startRemoveItem(cart.event, itemId));
   };
 
+  const getTotal = () => {
+    
+    const totalPrices = {
+      ticketsTotalPrice: 0,
+      productsTotalPrice: 0
+    }
+
+    cart.event.map( (item) => {
+      totalPrices.ticketsTotalPrice += parseFloat(item.tickets[0].price);
+      totalPrices.productsTotalPrice += parseFloat(item.products.map( product => product.price));
+    })
+
+    return totalPrices;
+  };
 
   return cart?.event?.length > 0 ? <FullCart
     cart={cart}
-    // total={total}
+    total={getTotal()}
     handleDeleteItem={handleDeleteItem}
     handleClearCart={handleClearCart}
     finishBuy={finishBuy}

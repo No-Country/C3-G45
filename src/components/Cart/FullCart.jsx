@@ -1,4 +1,5 @@
 import React from "react";
+import { useForm } from "hooks/useForm";
 
 const FullCart = ({
   cart,
@@ -7,6 +8,10 @@ const FullCart = ({
   handleClearCart,
   finishBuy,
 }) => {
+  const [formValues, handleInputChange] = useForm();
+
+  const { quantity } = formValues;
+
   const stringToDate = (string) => {
     return string.slice(0, 10).replace(/-/g, "/");
   };
@@ -39,13 +44,25 @@ const FullCart = ({
                         <i className="fas fa-map-marker-alt"></i> {e.location}
                       </p>
                       <p className="text-muted">
-                        <i className="fas fa-calendar-alt"></i> {stringToDate(e.date_event)} - <i className="fas fa-clock"></i> {stringToTime(e.date_event)}
+                        <i className="fas fa-calendar-alt"></i>{" "}
+                        {stringToDate(e.date_event)} -{" "}
+                        <i className="fas fa-clock"></i>{" "}
+                        {stringToTime(e.date_event)}
                       </p>
                       <p>
-                        <i className="fas fa-dollar-sign"></i> Price: USD{e.tickets[0].price}
+                        <i className="fas fa-dollar-sign"></i> Price: USD
+                        {e.tickets[0].price}
                       </p>
                     </div>
-                    <div className="col-xs-12 col-md-6 p-2 d-flex justify-content-center align-items-center">
+                    <div className="col-xs-12 col-md-3 p-2 d-flex justify-content-center align-items-center">
+                      <input
+                        type="number"
+                        name="quantity"
+                        placeholder={1}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div className="col-xs-12 col-md-3 p-2 d-flex justify-content-center align-items-center">
                       <button
                         className="btn btn-primary fas fa-times"
                         id={e.id}
@@ -65,7 +82,10 @@ const FullCart = ({
             <p>TOTAL: USD{total.ticketsTotalPrice}</p>
           </div>
           <div className="col-md-2">
-            <button className=" btn btn-primary" onClick={finishBuy}>
+            <button
+              className=" btn btn-primary"
+              onClick={() => finishBuy(quantity)}
+            >
               Buy
             </button>
           </div>

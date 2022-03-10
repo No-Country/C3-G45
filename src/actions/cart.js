@@ -29,23 +29,6 @@ const removeToCart = (filteredOrder) => {
     payload: filteredOrder,
   };
 };
-export const startBuy = (token, cart, quantity) => {
-  console.log(cart, quantity);
-  return (dispatch) => {
-    dispatch(buyCart(token, cart, quantity));
-  };
-};
-const buyCart = (token, cart, quantity) => {
-  console.log(cart, quantity);
-  return {
-    type: types.buyCart,
-    payload: {
-      token,
-      cart,
-      ticket_quantity: quantity,
-    },
-  };
-};
 
 /* Clear cart */
 export const startClearCart = () => {

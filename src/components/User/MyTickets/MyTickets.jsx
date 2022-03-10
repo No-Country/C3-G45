@@ -118,7 +118,12 @@ const items = [
 ];
 
 const MyTickets = () => {
-  const state = useSelector((state) => state);
+  const { auth, order } = useSelector((state) => state);
+
+  order.order.order.map( tickets => {
+    console.log(tickets.items[0])  
+  })
+
   return (
     <>
       <div className="container-fluid cont-tickets">
@@ -126,7 +131,7 @@ const MyTickets = () => {
           <div className="bg-my-tickets">
             <div className="sticky">
               <p className="text-presentation">
-                Welcome, {state.auth.name} <br></br>
+                Welcome, {auth.name} <br></br>
                 Are you ready for the Show?
               </p>
             </div>
@@ -136,7 +141,7 @@ const MyTickets = () => {
           <h3> <i className="fas fa-angle-right"></i>Check the latest Tickets</h3>
         </div>
       </div>
-      <div className="container tickets-user" >
+      <div className="container " >
         <div className="text-intro" >
           <h2>Upcoming Events</h2>
         </div>

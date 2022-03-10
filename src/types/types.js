@@ -21,5 +21,5 @@ export const types = {
     clearCart: "[Cart] Clear cart",
 
     /*Buy types*/
-    buyCart: "[Cart] buy"
+    buyCart: "[Order] buy"
 }

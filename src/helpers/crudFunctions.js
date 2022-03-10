@@ -48,27 +48,25 @@ const signinUser = async (email, password) => {
 };
 const postOrder = async (token, cart) => {
   let config = { headers: { Authorization: `Bearer ${token}` } };
-  let url =
-    "https://no-country-c03-g57-backend.herokuapp.com/api/v1/order-view";
-  const orderData = {};
-
-  cart.map((item) => {
-    return (orderData = {
-      id_product: null,
-      q_product: 0,
-      id_ticket: item.id,
-      q_ticket: item.ticketQuantity,
-    });
-  });
+  let url = "https://no-country-c03-g57-backend.herokuapp.com/api/v1/order-view";
 
   //, token header auth
-  const { data } = await axios.post(url, orderData, config);
+  const { data } = await axios.post(url, {
+    product: null,
+    ticket: cart.id,
+    quantity: 0,
+    quantity_tickets: 1,
+  }, config);
+  
   return data;
 };
-const getOrder = async () => {
-  let url =
-    "https://no-country-c03-g57-backend.herokuapp.com/api/v1/user/1/orders/";
+const getOrder = async (token) => {
+  let url = "https://no-country-c03-g57-backend.herokuapp.com/api/v1/order-view/";
+  const config = { headers: { Authorization: `Bearer ${token}` } };
   //para mi usuario, que tiene el id_ user, con el token para auth
+
+  const { data } = await axios.get(url, config);
+  return data;
 };
 
 export { getItem, signupUser, signinUser, postOrder, getOrder };

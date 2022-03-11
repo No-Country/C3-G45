@@ -44,7 +44,7 @@ const MerchsCards = () => {
       <div className="row">
         <div className="col">
           <div className="row row-cols-1 ">
-            {data.events.data.map((e) => e.products.map((m) => { 
+            {data.events.data.map((e) => e.products.map((m) => {
               return (<MerchCard key={m.id} m={m} handleAddToCart={handleAddToCart} />);
             })
             )}

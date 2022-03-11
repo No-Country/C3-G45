@@ -1,9 +1,9 @@
 /* customizable snowflake styling */
 .snowflake {
-  
-  font-size              : 0.2em;
-  font-family            : Arial;
-  color: #f4b0e8f8;
+
+  font-size  : 0.2em;
+  font-family: Arial;
+  color      : #f4b0e8f8;
   text-shadow: 0 0 1px #000;
 }
 

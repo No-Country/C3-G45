@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const UpdatePassword= () => {
-  
+const UpdatePassword = () => {
+
   return (
-      <div>
-        Hola acá podes cambiar tu contraseña
-      </div>
+    <div>
+      Hola acá podes cambiar tu contraseña
+    </div>
   )
 }
 

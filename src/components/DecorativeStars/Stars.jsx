@@ -7,38 +7,38 @@ const Stars = () => {
     return (
         <>
             <div className='container-stars'>
-            <div className="snowflakes">
-                <div className="snowflake">
-                    ❅
+                <div className="snowflakes">
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❄
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❄
+                    </div>
+                    <div className="snowflake">
+                        ❅
+                    </div>
+                    <div className="snowflake">
+                        ❆
+                    </div>
+                    <div className="snowflake">
+                        ❄
+                    </div>
                 </div>
-                <div className="snowflake">
-                    ❅
-                </div>
-                <div className="snowflake">
-                    ❆
-                </div>
-                <div className="snowflake">
-                    ❄
-                </div>
-                <div className="snowflake">
-                    ❅
-                </div>
-                <div className="snowflake">
-                    ❆
-                </div>
-                <div className="snowflake">
-                    ❄
-                </div>
-                <div className="snowflake">
-                    ❅
-                </div>
-                <div className="snowflake">
-                    ❆
-                </div>
-                <div className="snowflake">
-                    ❄
-                </div>
-            </div>
             </div>
         </>
     )

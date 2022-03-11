@@ -120,9 +120,9 @@ const items = [
 const MyTickets = () => {
   const { auth, order } = useSelector((state) => state);
 
-  order.order.order.map( tickets => {
-    console.log(tickets.items[0])  
-  })
+  // order.order.order.map( tickets => {
+  //   console.log(tickets.items[0])  
+  // })
 
   return (
     <>

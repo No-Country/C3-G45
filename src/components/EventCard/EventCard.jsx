@@ -15,7 +15,7 @@ const EventCard = ({ e, handleAddToCart }) => {
         <a className="postcard__img_link" href="#">
           <img
             className="postcard__img"
-            src="https://dynamicmedia.livenationinternational.com/Media/d/q/t/e7e378ed-7f05-4c67-8f44-b08c8aa72ca9.jpg"
+            src={e.image_event}
             alt="Title"
           />
         </a>
@@ -53,14 +53,9 @@ const EventCard = ({ e, handleAddToCart }) => {
                 id={e.id}
                 onClick={handleAddToCart}
               >
-                Add to Cart
+                Add to Cart<i className="fa fa-shopping-cart"></i>
               </button>
             </li>
-            {/*<li className="tag__item">
-                <button className="btn btn-primary">
-                  <i className="fas fa-gift"></i>Products
-                </button>
-              </li>*/}
           </ul>
         </div>
       </article>

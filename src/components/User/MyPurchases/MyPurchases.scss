@@ -81,27 +81,30 @@ $amount           : 20;
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
 }
+
 @media (max-width: 576px) {
-    .fix{
+    .fix {
         padding: 2rem !important;
     }
-    .decorative{
+
+    .decorative {
         display: none;
     }
-  }
+}
 
 @media (max-width: 321px) {
-    .fix{
+    .fix {
         padding: 2rem !important;
-        top: auto;
+        top    : auto;
     }
-    .decorative{
+
+    .decorative {
         display: none;
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .video-bg {
-      height: 27.5rem !important;
+        height: 27.5rem !important;
     }
-  }
+}

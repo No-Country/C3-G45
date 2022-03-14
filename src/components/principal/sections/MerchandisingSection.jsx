@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import TicketsCards from "components/TicketsCards/TicketsCards";
+import MerchsCards from "components/MerchsCards/MerchsCards";
 
 const MerchandisingSection = () => {
-   let showProducts = false;
-   //let showEvents = true;
+  const [showMerch, setShowMerch] = useState(false)
   return (
     <div className="container mt-5 mb-5 container-tickets">
       <div className="row mt-5">
@@ -17,7 +17,7 @@ const MerchandisingSection = () => {
               aria-label="search"
             />
             <button className="btn btn-outline-secondary" type="button">
-              Button
+              Search
             </button>
           </div>
           <label className="form-label mt-4">Price Range</label>
@@ -33,13 +33,12 @@ const MerchandisingSection = () => {
       <div className="row">
         <div className="col">
           <div className="btn-toolbar mt-4" role="group" aria-label="Events">
-            <button type="button" className="btn-merch btn btn-primary btn-lg"
-
-              >
+            <button type="button" className="btn-merch btn btn-primary btn-lg" onClick={() => setShowMerch(true)}
+            >
               New Products!
             </button>
-            <button type="button" className="btn-merch btn btn-primary btn-lg" 
-              >
+            <button type="button" className="btn-merch btn btn-primary btn-lg" onClick={() => setShowMerch(false)}
+            >
               New Events!
             </button>
           </div>
@@ -49,7 +48,7 @@ const MerchandisingSection = () => {
         <div className="row">
           <div className="col">
             <div className="row row-cols-1 ">
-              {showProducts?<p>Hola</p>: <TicketsCards />}
+              {showMerch ? <MerchsCards /> : <TicketsCards />}
             </div>
           </div>
         </div>

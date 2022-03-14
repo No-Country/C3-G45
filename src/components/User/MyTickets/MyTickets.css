@@ -1,50 +1,56 @@
-.cont-tickets{
+.cont-tickets {
   height: 100%;
 }
+
 .bg-my-tickets {
-  height: 100%;
-  min-height: 500px;
-  background-image: url(../../../assets/img/back-black.png);
+  height               : 100%;
+  min-height           : 500px;
+  background-image     : url(../../../assets/img/back-black.png);
   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-position  : center;
+  background-repeat    : no-repeat;
+  background-size      : cover;
 }
-.text-intro{
-  font-size: 26px;
+
+.text-intro {
+  font-size  : 26px;
   font-family: "Josefin Sans", sans-serif;
-  padding: 4rem 2rem;
-  color: #686AF1;
+  padding    : 4rem 2rem;
+  color      : #686AF1;
 }
 
 .fa-angle-right {
-  color: #686AF1;
+  color    : #686AF1;
   font-size: 26px;
 }
 
 .fa-angle-right:hover {
   color: #7622f0;
 }
-.text-presentation{
-  color: #E922FF;
+
+.text-presentation {
+  color      : #E922FF;
   font-weight: 600;
-  font-size: 60px;
+  font-size  : 60px;
   text-shadow: 0 0 0.1em #a737fa, 0 0 0.1em #04020F, 0 0 0.1em #04020F;
   font-family: "Bebas Neue", cursive;
-  padding: 4rem 2rem;
-  margin: 0; 
+  padding    : 4rem 2rem;
+  margin     : 0;
 }
-.sticky{
-  
+
+.sticky {
+
   position: sticky;
-  top: 10rem;
+  top     : 10rem;
 }
-.tickets-user{
+
+.tickets-user {
   max-width: 690px;
 
 }
+
 @media (max-width: 576px) {
-  .text-presentation{
+  .text-presentation {
     padding: 12rem 2rem;
   }
 }

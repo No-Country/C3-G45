@@ -9,12 +9,14 @@ import EventCard from "components/EventCard/EventCard";
 
 const TicketsCards = () => {
   const { data, auth, cart } = useSelector((state) => state);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleAddToCart = (e) => {
     const node = Number(e.target.id);
     const event = data.events.data.find((event) => event.id === node);
+    console.log(event)
     let currentCart = [];
 
     if (cart.event === undefined) {

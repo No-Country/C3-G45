@@ -1,32 +1,33 @@
-$main-green: #79dd09 !default;
-$main-green-rgb-015: rgba(121, 221, 9, 0.1) !default;
-$main-yellow: #bdbb49 !default;
+$main-green         : #79dd09 !default;
+$main-green-rgb-015 : rgba(121, 221, 9, 0.1) !default;
+$main-yellow        : #bdbb49 !default;
 $main-yellow-rgb-015: rgba(189, 187, 73, 0.1) !default;
-$main-red: #bd150b !default;
-$main-red-rgb-015: rgba(189, 21, 11, 0.1) !default;
-$main-blue: #e922ff !default;
-$main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
+$main-red           : #bd150b !default;
+$main-red-rgb-015   : rgba(189, 21, 11, 0.1) !default;
+$main-blue          : #e922ff !default;
+$main-blue-rgb-015  : rgba(0, 118, 189, 0.1) !default;
 
 /* This pen */
 
 .btn-buy {
   min-width: 100px;
 }
+
 .status-event {
-  position: absolute;
-  top: 0px;
-  right: 0px;
+  position        : absolute;
+  top             : 0px;
+  right           : 0px;
   background-color: rgba(118, 34, 240, 0.6);
-  min-width: 80px;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-  border-radius: 10px 0px;
+  min-width       : 80px;
+  box-shadow      : 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius   : 10px 0px;
 }
 
 .status-event p {
-  margin: auto;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  font-size: 1.3rem;
+  margin        : auto;
+  padding       : 0.5rem 1rem;
+  text-align    : center;
+  font-size     : 1.3rem;
   letter-spacing: 2px;
 }
 
@@ -37,20 +38,20 @@ $main-blue-rgb-015: rgba(0, 118, 189, 0.1) !default;
 a,
 a:hover {
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition     : color 0.3s ease-in-out;
 }
 
 /* Cards */
 .postcard {
-  flex-wrap: wrap;
-  display: flex;
-  text-align: left !important;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  flex-wrap    : wrap;
+  display      : flex;
+  text-align   : left !important;
+  box-shadow   : 0 4px 21px -12px rgba(0, 0, 0, 0.66);
   border-radius: 10px;
-  margin: 0 0 2rem 0;
-  overflow: hidden;
-  position: relative;
-  color: #ffffff;
+  margin       : 0 0 2rem 0;
+  overflow     : hidden;
+  position     : relative;
+  color        : #ffffff;
 
   &.dark {
     background-color: #18151f;
@@ -71,8 +72,8 @@ a:hover {
   h1,
   .h1 {
     margin-bottom: 0.5rem;
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight  : 500;
+    line-height  : 1.2;
   }
 
   .small {
@@ -80,7 +81,7 @@ a:hover {
   }
 
   .postcard__title {
-    font-size: 1.75rem;
+    font-size  : 1.75rem;
     font-family: "Josefin Sans", sans-serif;
   }
 
@@ -91,9 +92,9 @@ a:hover {
 
   .postcard__img {
     max-height: 180px;
-    width: 100%;
+    width     : 100%;
     object-fit: cover;
-    position: relative;
+    position  : relative;
   }
 
   .postcard__img_link {
@@ -101,47 +102,47 @@ a:hover {
   }
 
   .postcard__bar {
-    width: 50px;
-    height: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
+    width           : 50px;
+    height          : 10px;
+    margin          : 10px 0;
+    border-radius   : 5px;
     background-color: #424242;
-    transition: width 0.2s ease;
+    transition      : width 0.2s ease;
   }
 
   .postcard__text {
-    padding: 1.5rem;
-    position: relative;
-    display: flex;
+    padding       : 1.5rem;
+    position      : relative;
+    display       : flex;
     flex-direction: column;
-    width: 100%;
-    font-family: "Bebas Neue", cursive;
+    width         : 100%;
+    font-family   : "Bebas Neue", cursive;
   }
 
   .postcard__preview-txt {
-    overflow: hidden;
+    overflow     : hidden;
     text-overflow: ellipsis;
-    text-align: justify;
-    height: 100%;
+    text-align   : justify;
+    height       : 100%;
   }
 
   .postcard__tagbox {
-    display: flex;
-    flex-flow: row wrap;
-    font-size: 14px;
-    margin: 20px 0 0 0;
-    padding: 0;
+    display        : flex;
+    flex-flow      : row wrap;
+    font-size      : 14px;
+    margin         : 20px 0 0 0;
+    padding        : 0;
     justify-content: center;
 
     .tag__item {
-      display: inline-block;
+      display      : inline-block;
       /*background : rgba(83, 83, 83, 0.4);
       border-radius: 3px;*/
-      padding: 2.5px 10px;
-      margin: 0 5px 5px 0;
-      cursor: default;
-      user-select: none;
-      transition: background-color 0.3s;
+      padding      : 2.5px 10px;
+      margin       : 0 5px 5px 0;
+      cursor       : default;
+      user-select  : none;
+      transition   : background-color 0.3s;
 
       /*&:hover {
         background: rgba(83, 83, 83, 0.8);
@@ -150,15 +151,15 @@ a:hover {
   }
 
   &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    content         : "";
+    position        : absolute;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
     background-image: linear-gradient(-70deg, #424242, transparent 50%);
-    opacity: 1;
-    border-radius: 10px;
+    opacity         : 1;
+    border-radius   : 10px;
   }
 
   &:hover .postcard__bar {
@@ -179,24 +180,24 @@ a:hover {
     }
 
     .postcard__img {
-      max-width: 300px;
+      max-width : 300px;
       max-height: 100%;
       transition: transform 0.3s ease;
     }
 
     .postcard__text {
       padding: 3rem 4rem;
-      width: 100%;
+      width  : 100%;
     }
 
     .media.postcard__text:before {
-      content: "";
-      position: absolute;
-      display: block;
+      content   : "";
+      position  : absolute;
+      display   : block;
       background: #18151f;
-      top: -20%;
-      height: 130%;
-      width: 55px;
+      top       : -20%;
+      height    : 130%;
+      width     : 55px;
     }
 
     &:hover .postcard__img {
@@ -212,12 +213,12 @@ a:hover {
     }
 
     &:nth-child(2n + 1) .postcard__text::before {
-      left: -12px !important;
+      left     : -12px !important;
       transform: rotate(4deg);
     }
 
     &:nth-child(2n + 0) .postcard__text::before {
-      right: -12px !important;
+      right    : -12px !important;
       transform: rotate(-4deg);
     }
   }
@@ -229,13 +230,13 @@ a:hover {
   }
 
   .postcard__text:before {
-    content: "";
+    content : "";
     position: absolute;
-    display: block;
+    display : block;
 
-    top: -20%;
+    top   : -20%;
     height: 130%;
-    width: 55px;
+    width : 55px;
   }
 
   .postcard.dark {
@@ -254,7 +255,7 @@ a:hover {
 /* COLORS */
 .postcard .postcard__tagbox .green.play:hover {
   background: $main-green;
-  color: black;
+  color     : black;
 }
 
 .green .postcard__title:hover {
@@ -266,19 +267,15 @@ a:hover {
 }
 
 .green::before {
-  background-image: linear-gradient(
-    -30deg,
-    $main-green-rgb-015,
-    transparent 50%
-  );
+  background-image: linear-gradient(-30deg,
+      $main-green-rgb-015,
+      transparent 50%);
 }
 
 .green:nth-child(2n)::before {
-  background-image: linear-gradient(
-    30deg,
-    $main-green-rgb-015,
-    transparent 50%
-  );
+  background-image: linear-gradient(30deg,
+      $main-green-rgb-015,
+      transparent 50%);
 }
 
 .postcard .postcard__tagbox .blue.play:hover {
@@ -294,11 +291,9 @@ a:hover {
 }
 
 .blue::before {
-  background-image: linear-gradient(
-    -30deg,
-    $main-blue-rgb-015,
-    transparent 50%
-  );
+  background-image: linear-gradient(-30deg,
+      $main-blue-rgb-015,
+      transparent 50%);
 }
 
 .blue:nth-child(2n)::before {
@@ -327,7 +322,7 @@ a:hover {
 
 .postcard .postcard__tagbox .yellow.play:hover {
   background: $main-yellow;
-  color: black;
+  color     : black;
 }
 
 .yellow .postcard__title:hover {
@@ -339,83 +334,63 @@ a:hover {
 }
 
 .yellow::before {
-  background-image: linear-gradient(
-    -30deg,
-    $main-yellow-rgb-015,
-    transparent 50%
-  );
+  background-image: linear-gradient(-30deg,
+      $main-yellow-rgb-015,
+      transparent 50%);
 }
 
 .yellow:nth-child(2n)::before {
-  background-image: linear-gradient(
-    30deg,
-    $main-yellow-rgb-015,
-    transparent 50%
-  );
+  background-image: linear-gradient(30deg,
+      $main-yellow-rgb-015,
+      transparent 50%);
 }
 
 @media screen and (min-width: 769px) {
   .green::before {
-    background-image: linear-gradient(
-      -80deg,
-      $main-green-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(-80deg,
+        $main-green-rgb-015,
+        transparent 50%);
   }
 
   .green:nth-child(2n)::before {
-    background-image: linear-gradient(
-      80deg,
-      $main-green-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(80deg,
+        $main-green-rgb-015,
+        transparent 50%);
   }
 
   .blue::before {
-    background-image: linear-gradient(
-      -80deg,
-      $main-blue-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(-80deg,
+        $main-blue-rgb-015,
+        transparent 50%);
   }
 
   .blue:nth-child(2n)::before {
-    background-image: linear-gradient(
-      80deg,
-      $main-blue-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(80deg,
+        $main-blue-rgb-015,
+        transparent 50%);
   }
 
   .red::before {
-    background-image: linear-gradient(
-      -80deg,
-      $main-red-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(-80deg,
+        $main-red-rgb-015,
+        transparent 50%);
   }
 
   .red:nth-child(2n)::before {
-    background-image: linear-gradient(
-      80deg,
-      $main-red-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(80deg,
+        $main-red-rgb-015,
+        transparent 50%);
   }
 
   .yellow::before {
-    background-image: linear-gradient(
-      -80deg,
-      $main-yellow-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(-80deg,
+        $main-yellow-rgb-015,
+        transparent 50%);
   }
 
   .yellow:nth-child(2n)::before {
-    background-image: linear-gradient(
-      80deg,
-      $main-yellow-rgb-015,
-      transparent 50%
-    );
+    background-image: linear-gradient(80deg,
+        $main-yellow-rgb-015,
+        transparent 50%);
   }
 }

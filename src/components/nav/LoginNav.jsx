@@ -7,9 +7,9 @@ const LoginNav = () => {
   const { cart } = useSelector(state => state);
   let contCart;
 
-  if(cart.event === undefined){
+  if (cart.event === undefined) {
     contCart = 0;
-  }else{
+  } else {
     contCart = cart.event.length
   }
 
@@ -21,7 +21,7 @@ const LoginNav = () => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link fas fa-shopping-cart" id="cart" to="/cart"> ({ contCart })</Link>
+        <Link className="nav-link fas fa-shopping-cart" id="cart" to="/cart"> ({contCart})</Link>
       </li>
     </ul>
   );

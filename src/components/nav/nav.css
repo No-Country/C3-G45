@@ -1,5 +1,21 @@
-.navbar-nav a:hover{
-    color: rgb(64, 165, 224)!important;
-    border-bottom: 2px solid black;
-    transition: 100ms all;
+.navbar {
+    background: -moz-linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(90deg, rgba(42, 2, 79, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    filter    : progid:DXImageTransform.Microsoft.gradient(startColorstr="#2a024f", endColorstr="#000000", GradientType=1);
+}
+
+.nav-link {
+    color: #E922FF !important;
+}
+
+.navbar-nav a:hover {
+    color        : rgb(64, 165, 224) !important;
+    border-bottom: 2px solid #E922FF;
+    transition   : 100ms all;
+}
+
+.nav-logo {
+    width : 85px;
+    height: 35px;
 }

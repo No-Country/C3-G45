@@ -1,0 +1,146 @@
+/*header*/
+
+.btn-primary {
+  background-color: #e922ff;
+  border-color    : #e922ff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #7622f0;
+  border-color    : #7622f0;
+  box-shadow      : none;
+}
+
+.title-header {
+  color      : #e922ff;
+  font-weight: 600;
+  font-size  : 90px;
+  text-shadow: 0 0 0.1em #a737fa, 0 0 0.1em #a737fa, 0 0 0.1em #a737fa;
+  font-family: "Bebas Neue", cursive;
+  margin     : 0;
+  padding    : 0;
+}
+
+.text-header {
+  max-width  : 300px;
+  font-size  : medium;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/*ESTILOS PARA LAS SECCIONES DE ÚLTIMO VIDEO*/
+.video-section-text {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-evenly;
+  align-items    : flex-start;
+}
+
+.video-section-text h2 {
+  font-size : 5rem;
+  color     : #46afcc;
+  text-align: start;
+}
+
+.video-bg {
+  background-image: url(../../assets/img/dua-lipa.jpg);
+  background-size : cover;
+  border-radius   : 2rem;
+  height          : 37.5rem;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+}
+
+.btn-video {
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  background-color: rgba(118, 34, 240, 0.8);
+  border          : none;
+  border-radius   : 5rem;
+  height          : 8rem;
+  width           : 8rem;
+}
+
+.btn-video:hover {
+  transform : scale(1.5);
+  transition: 300ms all;
+}
+
+.fa-play {
+  font-size: 2rem;
+}
+
+.fa-play:hover {
+  color: white;
+}
+
+.fa-angle-down {
+  color    : #7622f0;
+  font-size: 5rem;
+}
+
+.fa-angle-down:hover {
+  color: #7622f0;
+}
+
+/*merchandising section*/
+
+.btn-merch {
+  color        : black;
+  border-radius: 10rem;
+}
+
+.card {
+  color: #04020f;
+}
+
+.card img {
+  height: 12rem;
+}
+
+.card-body {
+  display : inline-block;
+  position: absolute;
+}
+
+.container-tickets {
+  max-width: 690px;
+}
+
+.filter-container {
+  text-align: center;
+}
+
+.btn-toolbar {
+  justify-content: space-between;
+  width          : 100%;
+}
+
+.fa-calendar-alt,
+.fa-map-marker-alt,
+.fa-globe-americas {
+  color: #7622f0
+}
+
+.fa-calendar-alt:hover,
+.fa-map-marker-alt:hover,
+.fa-globe-americas:hover {
+  color: #7622f0
+}
+
+@media (max-width: 576px) {
+  .body-ticket {
+    justify-content: center;
+    text-align     : center;
+    align-items    : center;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-bg {
+    height: 27.5rem !important;
+  }
+}

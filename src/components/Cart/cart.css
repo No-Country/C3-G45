@@ -1,0 +1,26 @@
+.cart-section {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  min-height     : 47rem;
+}
+
+.fa-calendar-alt,
+.fa-map-marker-alt,
+.fa-globe-americas,
+.fa-dollar-sign,
+.fa-clock {
+  color: #7622f0;
+}
+
+.fa-calendar-alt:hover,
+.fa-map-marker-alt:hover,
+.fa-globe-americas:hover,
+.fa-dollar-sign:hover {
+  color: #7622f0;
+}
+
+.fa-frown:hover {
+  color: white;
+}

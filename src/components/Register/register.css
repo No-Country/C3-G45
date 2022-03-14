@@ -1,0 +1,31 @@
+.row-form {
+    min-height: 48.5rem;
+}
+
+
+.title-register {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.login-section {
+    display        : flex;
+    flex-flow      : column wrap;
+    justify-content: center;
+    align-items    : center;
+}
+
+.col {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.auth__alert-error {
+    background-color: red;
+    border-radius   : 5px;
+    color           : white;
+    display         : flex;
+    justify-content : center;
+    margin-bottom   : 2rem;
+    padding         : 5px
+}

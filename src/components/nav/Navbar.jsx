@@ -1,26 +1,30 @@
-import logo from '../../assets/img/DuaLipaLogo2020.png';
+import logo from 'assets/img/logo.svg';
 import './nav.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import UserNav from './UserNav';
+import LoginNav from './LoginNav';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+  const state = useSelector(state => state);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="#">
-          <img src={logo} alt="" width="85" height="35" />
-        </a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <Link className="navbar-brand" id='home' to="/home">
+          <img src={logo} className="nav-logo" alt="" />
+        </Link>
+        <button className="navbar-toggler" type="button"
+          data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Ingresar</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Registrar</a>
-            </li>
-          </ul>
+          {
+            state.auth.session ? <LoginNav /> : <UserNav />
+          }
         </div>
       </div>
     </nav>
